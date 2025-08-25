@@ -1,9 +1,8 @@
-import { createContext, useReducer, useMemo, useCallback, useEffect, useContext } from "react";
+import { useReducer, useMemo, useCallback, useEffect, useContext } from "react";
 import type { ChildProps } from "app-types";
 import authState from "@data/state/authState.json";
-import type { AuthSchema, CustomerSub, ISubscription, UserSchema } from "auth-context";
+import type { CustomerSub, ISubscription, UserSchema } from "auth-context";
 import type { EmailParam, ForgotPasswordValues, LoginValues, RegisterFormProps } from "app-forms";
-import { UserContext } from "@utils/context/user/UserContext";
 import { reducer } from "./AuthReducer";
 import { singIn } from "./request/singIn";
 import { singUp } from "./request/singUp";
@@ -25,7 +24,8 @@ import { customerSubscription } from "./request/customerSubsctiption";
 import { editAvatar } from "./request/editAvatar";
 import { configureEmailSettings } from "./request/configureEmailSettings";
 import { A_AUTH } from "@utils/actions/AuthActions";
-export const AuthContext = createContext<AuthSchema>({} as AuthSchema);
+import { UserContext } from "../user/UserContextInstance";
+import { AuthContext } from "./AuthInstance";
 
 export const AuthState = ({ children }: ChildProps) => {
   const [state, dispatch] = useReducer(reducer, authState);

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 declare module "log-context" {
   import { A_LOG } from "@utils/actions/LogActions";
 

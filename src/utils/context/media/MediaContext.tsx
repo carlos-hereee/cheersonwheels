@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useMemo, useReducer } from "rea
 import mediaState from "@data/state/mediaState.json";
 import type { ChildProps } from "app-types";
 import type { CreatePost, IMediaState, Post, PostReply } from "media-context";
-import { AuthContext } from "@utils/context/auth/AuthContext";
+import { AuthContext } from "@utils/context/auth/AuthInstance";
 import { reducer } from "./MediaReducer";
 import { createPost } from "./requests/createPost";
 import { fetchPosts } from "./requests/fetchPosts";

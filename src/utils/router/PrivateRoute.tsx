@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { AuthContext } from "@utils/context/auth/AuthContext";
 import { MediaContext } from "@utils/context/media/MediaContext";
 import { LogContext } from "@utils/context/log/LogInstance";
+import { AuthContext } from "@utils/context/auth/AuthInstance";
 
 const PrivateRoute = () => {
   const { accessToken } = useContext(AuthContext);

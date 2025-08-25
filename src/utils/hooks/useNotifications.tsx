@@ -1,5 +1,5 @@
 import { AppContext } from "@utils/context/app/AppContext";
-import { AuthContext } from "@utils/context/auth/AuthContext";
+import { AuthContext } from "@utils/context/auth/AuthInstance";
 // import { dashboardMenu } from '@data/data.json';
 import type { Notification } from "app-types";
 import { useContext, useEffect, useState } from "react";

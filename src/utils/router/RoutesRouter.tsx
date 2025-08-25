@@ -3,7 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { PageNotFound } from "nexious-library";
 import PublicRoute from "./PublicRoute";
 import Landing from "@pages/Landing";
-import { AuthContext } from "@utils/context/auth/AuthContext";
+import { AuthContext } from "@utils/context/auth/AuthInstance";
 
 const RoutesRouter = () => {
   const { accessToken } = useContext(AuthContext);

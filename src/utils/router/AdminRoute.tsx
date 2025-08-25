@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { AuthContext } from "@utils/context/auth/AuthContext";
+import { AuthContext } from "@utils/context/auth/AuthInstance";
 import { AppContext } from "@utils/context/app/AppContext";
 
 import { MediaContext } from "@utils/context/media/MediaContext";

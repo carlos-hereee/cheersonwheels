@@ -2,7 +2,7 @@ import type { ChildProps } from "app-types";
 import { useCallback, useContext, useMemo, useReducer } from "react";
 import type { DUser } from "user-context";
 import userState from "@data/state/userState.json";
-import { AuthContext } from "@utils/context/auth/AuthContext";
+import { AuthContext } from "@utils/context/auth/AuthInstance";
 import type { UserSchema } from "auth-context";
 import { reducer } from "./UserReducer";
 import { addUserPost } from "./request/addUserPost";
