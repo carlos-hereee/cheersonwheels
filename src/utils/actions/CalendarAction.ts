@@ -1,4 +1,5 @@
-export enum CAL_ACTIONS {
+/* eslint-disable no-unused-vars */
+export enum A_CALENDAR {
   // boolean payloads
   IS_LOADING,
   SET_ERROR,

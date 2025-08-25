@@ -1,4 +1,5 @@
-export enum ADMIN_ACTIONS {
+/* eslint-disable no-unused-vars */
+export enum A_ADMIN {
   IS_LOADING,
   SET_FORM_ERRORS,
   SET_FORM_STATUS,

@@ -1,17 +1,17 @@
-import { CHECKOUT_ACTIONS } from "@actions/CheckoutActions";
+import { A_CHECKOUT } from "@utils/actions/CheckoutActions";
 import { CheckoutActionProps, CheckoutStateProps } from "checkout-context";
 
 export const reducer = (state: CheckoutStateProps, action: CheckoutActionProps): CheckoutStateProps => {
   switch (action.type) {
-    case CHECKOUT_ACTIONS.IS_LOADING:
+    case A_CHECKOUT.IS_LOADING:
       return { ...state, isLoading: action.payload };
-    case CHECKOUT_ACTIONS.UPDATE_CART:
+    case A_CHECKOUT.UPDATE_CART:
       return { ...state, cart: action.payload };
-    case CHECKOUT_ACTIONS.SET_MERCH:
+    case A_CHECKOUT.SET_MERCH:
       return { ...state, merch: action.payload };
-    case CHECKOUT_ACTIONS.SET_ORDER:
+    case A_CHECKOUT.SET_ORDER:
       return { ...state, order: action.payload };
-    case CHECKOUT_ACTIONS.SET_ERROR:
+    case A_CHECKOUT.SET_ERROR:
       return { ...state, error: action.payload };
 
     default:

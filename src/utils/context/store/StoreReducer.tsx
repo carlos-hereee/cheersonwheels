@@ -1,27 +1,27 @@
-import { STORE_ACTIONS } from "@actions/StoreActions";
-import { ServiceActionProps as ActionProps, StoreStateProps as StateProps } from "store-context";
+import { A_STORE } from "@utils/actions/StoreActions";
+import type { ServiceActionProps as ActionProps, StoreStateProps as StateProps } from "store-context";
 
 export const reducer = (state: StateProps, action: ActionProps): StateProps => {
   switch (action.type) {
-    case STORE_ACTIONS.IS_LOADING:
+    case A_STORE.IS_LOADING:
       return { ...state, isLoading: action.payload };
-    case STORE_ACTIONS.UPDATE_CART:
+    case A_STORE.UPDATE_CART:
       return { ...state, cart: action.payload };
-    case STORE_ACTIONS.SET_MERCH:
+    case A_STORE.SET_MERCH:
       return { ...state, merch: action.payload };
-    case STORE_ACTIONS.SET_STRIPE_SECRET:
+    case A_STORE.SET_STRIPE_SECRET:
       return { ...state, stripeSecret: action.payload };
-    case STORE_ACTIONS.SET_ERROR:
+    case A_STORE.SET_ERROR:
       return { ...state, error: action.payload };
-    case STORE_ACTIONS.SET_TRACK_ORDER:
+    case A_STORE.SET_TRACK_ORDER:
       return { ...state, trackOrder: action.payload };
-    case STORE_ACTIONS.SET_STRIPE_CONFIRMATION:
+    case A_STORE.SET_STRIPE_CONFIRMATION:
       return { ...state, stripeConfirmation: action.payload };
-    case STORE_ACTIONS.SET_STRIPE_BALANCE:
+    case A_STORE.SET_STRIPE_BALANCE:
       return { ...state, stripeBalance: action.payload };
-    case STORE_ACTIONS.SET_STRIPE_CONFIG:
+    case A_STORE.SET_STRIPE_CONFIG:
       return { ...state, stripeConfig: action.payload };
-    case STORE_ACTIONS.SET_STORE_ORDER:
+    case A_STORE.SET_STORE_ORDER:
       return { ...state, order: action.payload };
     // case "UPDATE_BOOKABLE":
     //   return { ...state, isLoading: false, bookable: action.payload };

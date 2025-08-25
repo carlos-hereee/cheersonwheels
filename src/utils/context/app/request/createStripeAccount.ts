@@ -1,16 +1,18 @@
-import { APP_ACTIONS } from "@actions/AppActions";
-import { axiosAuth } from "@axios/axiosAuth";
-// import { axiosMedia } from "@axios/axiosMedia";
-import { isDev } from "@config";
-import { AppDispatchProps } from "app-context";
+import { A_APP } from "@utils/actions/AppActions";
+import { axiosAuth } from "@utils/axios/axiosAuth";
+// import { axiosMedia } from "@utils/axios/axiosMedia";
+import { isDev } from "@utils/config";
+import type { AppDispatchProps } from "app-context";
+import type { DataResponse } from "data-response";
 
 export const createStripeAccount = async ({ dispatch, appId }: AppDispatchProps) => {
   try {
-    // dispatch({ type: APP_ACTIONS.IS_LOADING, payload: true });
-    const { data } = await axiosAuth.post(`/stripe/build-store/${appId}`);
-    dispatch({ type: APP_ACTIONS.SET_REDIRECT_URL, payload: data });
+    // dispatch({ type: A_APP.IS_LOADING, payload: true });
+    const { data }: DataResponse<string> = await axiosAuth.post(`/stripe/build-store/${appId}`);
+
+    dispatch({ type: A_APP.SET_REDIRECT_URL, payload: data });
   } catch (error) {
     if (isDev) console.log("error :>> ", error);
-    dispatch({ type: APP_ACTIONS.SET_APP_ERROR, payload: "Unable to create stripe account" });
+    dispatch({ type: A_APP.SET_APP_ERROR, payload: "Unable to create stripe account" });
   }
 };

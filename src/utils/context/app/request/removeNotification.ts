@@ -1,5 +1,5 @@
-import { axiosAuth } from "@axios/axiosAuth";
-import { AppDispatchProps } from "app-context";
+import { axiosAuth } from "@utils/axios/axiosAuth";
+import type { AppDispatchProps } from "app-context";
 
 export const removeNotification = async ({ appId, id, updateAppData }: AppDispatchProps) => {
   // require key variable

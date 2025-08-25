@@ -1,12 +1,11 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useReducer } from "react";
-import { AdminSchema, AppAssets, EditPageValues, FORM_STATUS } from "app-admin";
+import { useCallback, useContext, useEffect, useMemo, useReducer } from "react";
+import type { AppAssets, EditPageValues, FORM_STATUS } from "app-admin";
 import adminState from "@data/state/adminState.json";
-import { ChildProps } from "app-types";
-import { AppValues, FormValueData, StoreReq } from "app-forms";
-import { ADMIN_ACTIONS } from "@actions/AdminActions";
-import { StoreOrderUpdate } from "store-context";
-import { MediaRequest } from "media-context";
-import { MediaContext } from "@context/media/MediaContext";
+import type { ChildProps } from "app-types";
+import type { AppValues, FormValueData, StoreReq } from "app-forms";
+import type { StoreOrderUpdate } from "store-context";
+import type { MediaRequest } from "media-context";
+import { MediaContext } from "@utils/context/media/MediaContext";
 import { reducer } from "./AdminReducer";
 import { AppContext } from "../app/AppContext";
 import { AuthContext } from "../auth/AuthContext";
@@ -37,8 +36,9 @@ import { removeMenuItem } from "./requests/app/removeMenuItem";
 import { updateMenuItem } from "./requests/app/updateMenuItem";
 import { updateOrder } from "./requests/store/updateOder";
 import { fetchWebhooks } from "./requests/fetchWebhooks";
+import { A_ADMIN } from "@utils/actions/AdminActions";
+import { AdminContext } from "./AdminInstance";
 
-export const AdminContext = createContext<AdminSchema>({} as AdminSchema);
 export const AdminState = ({ children }: ChildProps) => {
   const [state, dispatch] = useReducer(reducer, { ...adminState, formStatus: "IDLE" });
 
@@ -53,12 +53,12 @@ export const AdminState = ({ children }: ChildProps) => {
     if (values.posts) updatePosts(values.posts);
     // if (values.account) updateStripeConfig(values.account);
     if (values) setFormStatus("SUCCESS");
-    dispatch({ type: ADMIN_ACTIONS.IS_LOADING, payload: false });
+    dispatch({ type: A_ADMIN.IS_LOADING, payload: false });
   };
 
   useEffect(() => {
     if (accessToken) {
-      dispatch({ type: ADMIN_ACTIONS.IS_LOADING, payload: true });
+      dispatch({ type: A_ADMIN.IS_LOADING, payload: true });
       fetchAccessToken({ dispatch, handleAppAssets });
     } else setAppLoading(false);
   }, [accessToken]);
@@ -75,10 +75,16 @@ export const AdminState = ({ children }: ChildProps) => {
   }, []);
   const editMenuItem = useCallback((data: StoreReq) => updateMenuItem({ dispatch, handleAppAssets, ...data }), []);
 
-  const editLandingPage = useCallback((data: StoreReq) => updateLandingPage({ dispatch, ...data, handleAppAssets }), []);
+  const editLandingPage = useCallback(
+    (data: StoreReq) => updateLandingPage({ dispatch, ...data, handleAppAssets }),
+    [],
+  );
   const editAppDetails = useCallback((data: StoreReq) => updateAppDetails({ dispatch, ...data, handleAppAssets }), []);
   const editNewsletter = useCallback((data: StoreReq) => updateNewsletter({ dispatch, ...data, handleAppAssets }), []);
-  const editSocialMedia = useCallback((data: StoreReq) => updateSocialMedia({ dispatch, ...data, handleAppAssets }), []);
+  const editSocialMedia = useCallback(
+    (data: StoreReq) => updateSocialMedia({ dispatch, ...data, handleAppAssets }),
+    [],
+  );
 
   // calendar requests
   const editCalendar = useCallback((data: FormValueData) => updateCalendar({ dispatch, ...data, handleAppAssets }), []);
@@ -102,7 +108,10 @@ export const AdminState = ({ children }: ChildProps) => {
   const addMerch = useCallback((data: StoreReq) => addMerchendise({ dispatch, handleAppAssets, ...data }), []);
   const editMerch = useCallback((data: StoreReq) => updateMerch({ dispatch, handleAppAssets, ...data }), []);
 
-  const handleOrderClick = useCallback((data: StoreOrderUpdate) => updateOrder({ dispatch, ...data, handleAppAssets }), []);
+  const handleOrderClick = useCallback(
+    (data: StoreOrderUpdate) => updateOrder({ dispatch, ...data, handleAppAssets }),
+    [],
+  );
   const getWebhooks = useCallback(() => fetchWebhooks({ dispatch }), []);
 
   const adminValues = useMemo(() => {

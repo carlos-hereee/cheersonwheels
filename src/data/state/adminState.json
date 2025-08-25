@@ -133,7 +133,15 @@
       "link": "What page or url does it point to",
       "icon": "Choose icon"
     },
-    "placeholders": { "title": "", "tagline": "", "body": "", "cta": "", "hasSection": "", "hasCta": "", "hero": "file" },
+    "placeholders": {
+      "title": "",
+      "tagline": "",
+      "body": "",
+      "cta": "",
+      "hasSection": "",
+      "hasCta": "",
+      "hero": "file"
+    },
     "desiredOrder": ["title", "tagline", "hero", "body", "hasCta", "hasSections"]
   },
   "socialMediaForm": {

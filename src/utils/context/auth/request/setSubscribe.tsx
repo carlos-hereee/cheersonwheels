@@ -1,6 +1,6 @@
-import { axiosAuth } from "@axios/axiosAuth";
-import { axiosError } from "@axios/axiosError";
-import { AuthDispatchProps } from "auth-context";
+import { axiosAuth } from "@utils/axios/axiosAuth";
+import { axiosError } from "@utils/axios/axiosError";
+import type { AuthDispatchProps } from "auth-context";
 
 export const setSubscribe = async ({ dispatch, appId, updateUser }: AuthDispatchProps) => {
   // require key variable

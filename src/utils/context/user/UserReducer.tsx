@@ -1,5 +1,5 @@
-import { USER_ACTIONS } from "@actions/UserActions";
-import { UserActionProps, UserStateProps } from "user-context";
+import { USER_ACTIONS } from "@utils/actions/UserActions";
+import type { UserActionProps, UserStateProps } from "user-context";
 
 export const reducer = (state: UserStateProps, action: UserActionProps): UserStateProps => {
   switch (action.type) {

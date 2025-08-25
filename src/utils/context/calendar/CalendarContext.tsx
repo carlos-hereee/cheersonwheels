@@ -1,15 +1,16 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useReducer } from "react";
+import { useCallback, useContext, useEffect, useMemo, useReducer } from "react";
 import calendarState from "@data/state/calendarState.json";
-import { CalEvent, ICalendarSchema, IEvent, MeetingDetials, PostEvent } from "app-calendar";
-import { CalendarProps, ChildProps } from "app-types";
-import { AppContext } from "@context/app/AppContext";
-import { CAL_ACTIONS } from "@actions/CalendarAction";
+import type { CalEvent, IEvent, MeetingDetials, PostEvent } from "app-calendar";
+import type { CalendarProps, ChildProps } from "app-types";
+import { AppContext } from "@utils/context/app/AppContext";
 import { reducer } from "./CalendarReducer";
 import { setCalendar } from "./dispatch/setCalendar";
 import { setSelectedDay } from "./dispatch/setSelectedDay";
 import { postCalEvent } from "./request/postCalEvent";
 import { fetchCalendar } from "./request/fetchCalendar";
 import { setMeeting } from "./dispatch/setMeeting";
+import { A_CALENDAR } from "@utils/actions/CalendarAction";
+import { CalendarContext } from "./CalendarInstange";
 // import { contactUs } from "./helpers/contactUs";
 // import { getCalendarDay } from "./helpers/getCalendarDay";
 // import { setDay } from "./helpers/setDay";
@@ -20,7 +21,6 @@ import { setMeeting } from "./dispatch/setMeeting";
 // import { setError } from "./helpers/setError";
 // import { addCalendarEvent } from "./helpers/addCalendarEvent";
 
-export const CalendarContext = createContext<ICalendarSchema>({} as ICalendarSchema);
 export const CalendarState = ({ children }: ChildProps) => {
   const [state, dispatch] = useReducer(reducer, calendarState);
   const { calendar } = useContext(AppContext);
@@ -29,13 +29,19 @@ export const CalendarState = ({ children }: ChildProps) => {
     if (calendar) setCalendar({ dispatch, calendar });
   }, [calendar]);
 
-  const setCalStatus = useCallback((status: string) => dispatch({ type: CAL_ACTIONS.SET_REQUEST_STATUS, payload: status }), []);
+  const setCalStatus = useCallback((payload: string) => dispatch({ type: A_CALENDAR.SET_REQUEST_STATUS, payload }), []);
   const updateCalendar = useCallback((cal: CalendarProps) => setCalendar({ dispatch, calendar: cal }), []);
   const updateSelectedDay = useCallback((day: CalEvent) => setSelectedDay({ dispatch, day }), []);
   const updateMeeting = useCallback((meeting: MeetingDetials) => setMeeting({ dispatch, meeting }), []);
-  const updateActiveEvent = useCallback((event: IEvent) => dispatch({ type: CAL_ACTIONS.SET_EVENT, payload: event }), []);
-  const addCalendarEvent = useCallback((d: PostEvent) => postCalEvent({ dispatch, ...d, updateCalendar, setCalStatus }), []);
-  const getCalendar = useCallback((data: { appId: string }) => fetchCalendar({ dispatch, ...data, updateCalendar }), []);
+  const updateActiveEvent = useCallback((payload: IEvent) => dispatch({ type: A_CALENDAR.SET_EVENT, payload }), []);
+  const addCalendarEvent = useCallback(
+    (d: PostEvent) => postCalEvent({ dispatch, ...d, updateCalendar, setCalStatus }),
+    [],
+  );
+  const getCalendar = useCallback(
+    (data: { appId: string }) => fetchCalendar({ dispatch, ...data, updateCalendar }),
+    [],
+  );
 
   const calendarValues = useMemo(() => {
     return {

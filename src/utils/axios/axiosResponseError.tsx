@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-import { isDev } from "@config";
+import { isDev } from "@utils/config";
 
 export const axiosResponseError = (error: any, message: string) => {
   if (isDev) {

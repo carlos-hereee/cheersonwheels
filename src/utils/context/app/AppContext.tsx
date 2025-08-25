@@ -1,14 +1,12 @@
-import { ReactElement, createContext, useCallback, useContext, useMemo, useReducer } from "react";
+import { createContext, useCallback, useContext, useMemo, useReducer } from "react";
 import appState from "@data/state/appState.json";
-import { ActiveMenuProp, ChildProps, ContactApp, MediaItemProp, NProps, PageProps, SubcriptionProp } from "app-types";
-import { AppMap, AppSchema } from "app-context";
-import { AppAssets, FORM_STATUS } from "app-admin";
-import { APP_ACTIONS } from "@actions/AppActions";
+import type { ChildProps, ContactApp, MediaItemProp, NProps, PageProps, SubcriptionProp } from "app-types";
+import type { AppMap, AppSchema } from "app-context";
+import type { AppAssets, FORM_STATUS } from "app-admin";
 import { setAppData } from "./dispatch/setAppData";
 import { AuthContext } from "../auth/AuthContext";
 import { reducer } from "./AppReducer";
 import { fetchAppWithName } from "./request/fetchAppWithName";
-import { setActiveData } from "./dispatch/setActiveData";
 import { setIsLoading } from "./dispatch/setIsLoading";
 import { getInventory } from "./request/getInventory";
 import { fetchPage } from "./request/fetchPage";
@@ -23,10 +21,11 @@ import { createStripeAccount } from "./request/createStripeAccount";
 import { sendMessage } from "./request/sendMessage";
 import { buildMap } from "./request/buildMap";
 import { editMap } from "./request/editMap";
+import { A_APP } from "@utils/actions/AppActions";
 
 export const AppContext = createContext<AppSchema>({} as AppSchema);
 
-export const AppState = ({ children }: ChildProps): ReactElement => {
+export const AppState = ({ children }: ChildProps) => {
   const [state, dispatch] = useReducer(reducer, { ...appState, requestStatus: "IDLE" });
   const { accessToken, updateUser } = useContext(AuthContext);
 
@@ -34,7 +33,6 @@ export const AppState = ({ children }: ChildProps): ReactElement => {
   // update app data
   const updateAppData = useCallback((data: AppAssets) => setAppData({ dispatch, ...data }), []);
 
-  const updateActiveAppData = useCallback((data: ActiveMenuProp) => setActiveData({ dispatch, ...data }), []);
   // view store inventory
   const getStoreInventory = useCallback((storeId: string) => getInventory({ dispatch, storeId, updateAppData }), []);
   // create stripe account
@@ -47,17 +45,26 @@ export const AppState = ({ children }: ChildProps): ReactElement => {
 
   const getPlatformData = useCallback(() => fetchPlatformData({ dispatch }), []);
   const getAppUsers = useCallback((appId: string) => fetchAppUsers({ dispatch, appId }), []);
-  const setActivePage = useCallback((data: PageProps) => dispatch({ payload: data, type: APP_ACTIONS.SET_ACTIVE_PAGE }), []);
-  const setRequestStatus = useCallback((d: FORM_STATUS) => dispatch({ payload: d, type: APP_ACTIONS.SET_REQUEST_STATUS }), []);
+  const setActivePage = useCallback((data: PageProps) => dispatch({ payload: data, type: A_APP.SET_ACTIVE_PAGE }), []);
+  const setRequestStatus = useCallback(
+    (d: FORM_STATUS) => dispatch({ payload: d, type: A_APP.SET_REQUEST_STATUS }),
+    [],
+  );
   // ask user to upgrade app if they havent been online in a while
   const upgradeToLatest = useCallback((appId: string) => upgradeLatest({ dispatch, updateAppData, appId }), []);
-  const setAppMessage = useCallback((M: string) => dispatch({ payload: M, type: APP_ACTIONS.SET_APP_MESSAGE }), []);
+  const setAppMessage = useCallback((M: string) => dispatch({ payload: M, type: A_APP.SET_APP_MESSAGE }), []);
   const clearNotification = useCallback((data: NProps) => removeNotification({ dispatch, updateAppData, ...data }), []);
   const contactApp = useCallback((data: ContactApp) => sendMessage({ dispatch, updateAppData, ...data }), []);
-  const setSocialMedia = useCallback((d: MediaItemProp) => dispatch({ payload: d, type: APP_ACTIONS.SET_MEDIA_ITEM }), []);
+  const setSocialMedia = useCallback((d: MediaItemProp) => dispatch({ payload: d, type: A_APP.SET_MEDIA_ITEM }), []);
   // create and manage subscriptions
-  const createSubscription = useCallback((data: SubcriptionProp) => addSubscription({ dispatch, ...data, updateUser }), []);
-  const updateSubscription = useCallback((data: SubcriptionProp) => editSubscription({ dispatch, ...data, updateUser }), []);
+  const createSubscription = useCallback(
+    (data: SubcriptionProp) => addSubscription({ dispatch, ...data, updateUser }),
+    [],
+  );
+  const updateSubscription = useCallback(
+    (data: SubcriptionProp) => editSubscription({ dispatch, ...data, updateUser }),
+    [],
+  );
   const deleteSubscription = useCallback((data: SubcriptionProp) => removeSub({ dispatch, ...data, updateUser }), []);
   // app extra features
   const createMap = useCallback((data: AppMap) => buildMap({ dispatch, ...data, updateAppData }), []);
@@ -116,7 +123,6 @@ export const AppState = ({ children }: ChildProps): ReactElement => {
       updateAppData,
       getAppWithName,
       getPlatformData,
-      updateActiveAppData,
       setAppLoading,
       getStoreInventory,
       setActivePage,

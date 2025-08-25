@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 declare module "store-context" {
   import { Message, StoreProps } from "app-types";
-  import { UserSchema } from "auth-context";
-  import { STORE_ACTIONS } from "@actions/StoreActions";
+  import type { UserSchema } from "auth-context";
+  import { A_STORE } from "@utils/actions/StoreActions";
 
   export interface ViewOrderStatusKey {
     pending: DialogStatusProps;
@@ -204,16 +205,16 @@ declare module "store-context" {
     sessionCart?: CartProps;
   }
   export type ServiceActionProps =
-    | { type: STORE_ACTIONS.IS_LOADING; payload: boolean }
-    | { type: STORE_ACTIONS.SET_STRIPE_CONFIRMATION; payload: StripeConfirmationProps }
-    | { type: STORE_ACTIONS.SET_STRIPE_SECRET | STORE_ACTIONS.SET_ERROR; payload: string }
-    | { type: STORE_ACTIONS.SET_STORE_ORDER; payload: OrderSchema | undefined }
-    | { type: STORE_ACTIONS.SET_STRIPE_BALANCE; payload: StripeBalance }
-    | { type: STORE_ACTIONS.SET_TRACK_ORDER; payload: OrderSchema | undefined }
-    | { type: STORE_ACTIONS.SET_MERCH; payload: MerchProps | undefined }
-    | { type: STORE_ACTIONS.SET_STRIPE_CONFIG; payload: StripeConfig }
+    | { type: A_STORE.IS_LOADING; payload: boolean }
+    | { type: A_STORE.SET_STRIPE_CONFIRMATION; payload: StripeConfirmationProps }
+    | { type: A_STORE.SET_STRIPE_SECRET | A_STORE.SET_ERROR; payload: string }
+    | { type: A_STORE.SET_STORE_ORDER; payload: OrderSchema | undefined }
+    | { type: A_STORE.SET_STRIPE_BALANCE; payload: StripeBalance }
+    | { type: A_STORE.SET_TRACK_ORDER; payload: OrderSchema | undefined }
+    | { type: A_STORE.SET_MERCH; payload: MerchProps | undefined }
+    | { type: A_STORE.SET_STRIPE_CONFIG; payload: StripeConfig }
     | {
-        type: STORE_ACTIONS.ADD_TO_CART | STORE_ACTIONS.REMOVE_FROM_CART | STORE_ACTIONS.UPDATE_CART;
+        type: A_STORE.ADD_TO_CART | A_STORE.REMOVE_FROM_CART | A_STORE.UPDATE_CART;
         payload: CartProps[];
       };
 }

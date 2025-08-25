@@ -1,14 +1,13 @@
 import { useContext, useEffect } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { AuthContext } from "@context/auth/AuthContext";
-import { AppContext } from "@context/app/AppContext";
-import { nexiousName, nexiousMedia, nexiousLogo, nexiousAuthMenu, nexiousAppId, nexiousThemeList } from "@data/nexious.json";
-import { MediaContext } from "@context/media/MediaContext";
-import { LogContext } from "@context/log/LogContext";
+import { AuthContext } from "@utils/context/auth/AuthContext";
+import { AppContext } from "@utils/context/app/AppContext";
 
+import { MediaContext } from "@utils/context/media/MediaContext";
+import { LogContext } from "@utils/context/log/LogInstance";
 const AdminRoute = () => {
   const { accessToken, isLoading: isAuthLoading } = useContext(AuthContext);
-  const { isLoading: isAppLoading, getAppWithName, updateActiveAppData, appLink, appId } = useContext(AppContext);
+  const { isLoading: isAppLoading, getAppWithName, appLink, appId } = useContext(AppContext);
   const { pathname } = useLocation();
   const { getPosts } = useContext(MediaContext);
   const { setPage } = useContext(LogContext);
@@ -17,14 +16,7 @@ const AdminRoute = () => {
     setPage("private");
     const query = pathname.split("/");
     const routeAppName = query[query.length - 1];
-    updateActiveAppData({
-      appId: nexiousAppId,
-      appName: nexiousName,
-      logo: nexiousLogo,
-      media: nexiousMedia,
-      menu: nexiousAuthMenu,
-      themeList: nexiousThemeList,
-    });
+
     getPosts(appId);
     if (routeAppName !== appLink) getAppWithName(routeAppName);
   }, [pathname]);

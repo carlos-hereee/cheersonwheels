@@ -17,14 +17,14 @@ api.interceptors.request.use(
   (config) => {
     // Do something before request is sent
     // update content type to form submit assets
-    // eslint-disable-next-line no-param-reassign
+
     config.headers["Content-Type"] = "multipart/form-data";
     return config;
   },
   (error) => {
     console.log("error occured with configuration is sent", error);
     // Do something with request error
-  }
+  },
 );
 // Add a response interceptor
 api.interceptors.response.use(
@@ -37,6 +37,6 @@ api.interceptors.response.use(
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
     return Promise.reject(error);
-  }
+  },
 );
 export const axiosMedia = api;

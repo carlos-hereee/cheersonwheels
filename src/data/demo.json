@@ -27,12 +27,7 @@
       {
         "title": "Basic Package",
         "price": "$1100",
-        "features": [
-          "Standard Bar Setup",
-          "2 Bartenders",
-          "Up to 4 Hours of Service",
-          "Basic Drink Menu"
-        ]
+        "features": ["Standard Bar Setup", "2 Bartenders", "Up to 4 Hours of Service", "Basic Drink Menu"]
       },
       {
         "title": "Premium Package",
@@ -160,12 +155,6 @@
     "twitter": "https://twitter.com/cheersonwheels",
     "linkedin": "https://www.linkedin.com/company/cheersonwheels"
   },
-  "keywords": [
-    "mobile bar",
-    "event catering",
-    "bartending services",
-    "wedding bar",
-    "party bar"
-  ],
+  "keywords": ["mobile bar", "event catering", "bartending services", "wedding bar", "party bar"],
   "author": "Cheers on Wheels Team"
 }

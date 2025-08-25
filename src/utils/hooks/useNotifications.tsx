@@ -1,7 +1,7 @@
-import { AppContext } from "@context/app/AppContext";
-import { AuthContext } from "@context/auth/AuthContext";
-import { dashboardMenu } from "@data/data.json";
-import { Notification } from "app-types";
+import { AppContext } from "@utils/context/app/AppContext";
+import { AuthContext } from "@utils/context/auth/AuthContext";
+// import { dashboardMenu } from '@data/data.json';
+import type { Notification } from "app-types";
 import { useContext, useEffect, useState } from "react";
 
 interface NotificationCount {
@@ -16,11 +16,19 @@ interface NotificationCount {
 export const useNotifications = () => {
   const { notifications: userNotifications } = useContext(AuthContext);
   const { notifications: appNotifications } = useContext(AppContext);
-  const [ping, setPing] = useState<NotificationCount>(dashboardMenu);
+  const [ping, setPing] = useState<NotificationCount>();
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
   useEffect(() => {
-    const notificationCount: NotificationCount = { apps: 0, app: 0, account: 0, feed: 0, notifications: 0, orders: 0, store: 0 };
+    const notificationCount: NotificationCount = {
+      apps: 0,
+      app: 0,
+      account: 0,
+      feed: 0,
+      notifications: 0,
+      orders: 0,
+      store: 0,
+    };
 
     if (userNotifications && userNotifications.length > 0) {
       userNotifications.forEach((notification) => {

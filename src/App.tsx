@@ -1,5 +1,5 @@
-import type { ChildProps } from 'app-types';
-import { Footer, Header } from 'nexious-library';
+import type { ChildProps } from "app-types";
+import { Footer, Header } from "nexious-library";
 
 const App = ({ children }: ChildProps) => {
   return (

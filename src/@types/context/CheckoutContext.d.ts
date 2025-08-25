@@ -1,7 +1,7 @@
 declare module "checkout-context" {
   import { CartProps, MerchProps, OrderSchema } from "store-context";
   import { FORM_STATUS } from "app-admin";
-  import { CHECKOUT_ACTIONS } from "@actions/CheckoutActions";
+  import { A_CHECKOUT } from "@utils/actions/CheckoutActions";
 
   export interface CheckoutValues {
     cart: CartProps[];
@@ -29,10 +29,10 @@ declare module "checkout-context" {
     merch?: MerchProps;
   }
   export type CheckoutActionProps =
-    | { type: CHECKOUT_ACTIONS.IS_LOADING; payload: boolean }
-    | { type: CHECKOUT_ACTIONS.SET_ERROR; payload: string }
-    | { type: CHECKOUT_ACTIONS.SET_REQUEST_STATUS; payload: FORM_STATUS }
-    | { type: CHECKOUT_ACTIONS.SET_MERCH; payload: MerchProps }
-    | { type: CHECKOUT_ACTIONS.SET_ORDER; payload: OrderSchema | undefined }
-    | { type: CHECKOUT_ACTIONS.UPDATE_CART; payload: CartProps[] };
+    | { type: A_CHECKOUT.IS_LOADING; payload: boolean }
+    | { type: A_CHECKOUT.SET_ERROR; payload: string }
+    | { type: A_CHECKOUT.SET_REQUEST_STATUS; payload: FORM_STATUS }
+    | { type: A_CHECKOUT.SET_MERCH; payload: MerchProps }
+    | { type: A_CHECKOUT.SET_ORDER; payload: OrderSchema | undefined }
+    | { type: A_CHECKOUT.UPDATE_CART; payload: CartProps[] };
 }

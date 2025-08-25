@@ -1,27 +1,16 @@
-import { useContext, useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useContext, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
-// import { AppContext } from '@context/app/AppContext';
-import { AuthContext } from '@context/auth/AuthContext';
-import { LogContext } from '@context/log/LogContext';
+// import { AppContext } from '@utils/context/app/AppContext';
+import { AuthContext } from "@utils/context/auth/AuthContext";
+import { LogContext } from "@utils/context/log/LogInstance";
 
 const PublicRoute = () => {
-  //   const { updateActiveAppData, platformTiers, getPlatformData } =
-  //     useContext(AppContext);
   const { accessToken } = useContext(AuthContext);
   const { setPage } = useContext(LogContext);
 
   useEffect(() => {
-    setPage('public');
-    if (platformTiers.length <= 0) getPlatformData();
-    updateActiveAppData({
-      appId: nexiousAppId,
-      appName: nexiousName,
-      logo: nexiousLogo,
-      media: nexiousMedia,
-      themeList: nexiousThemeList,
-      menu: accessToken ? nexiousAuthMenu : nexiousMenu,
-    });
+    setPage("public");
   }, [accessToken]);
 
   return <Outlet />;

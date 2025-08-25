@@ -1,11 +1,12 @@
+/* eslint-disable no-unused-vars */
 declare module "app-context" {
+  import type { A_APP } from "@utils/actions/AppActions";
   import { Boards } from "task-board-context";
   import { Post } from "media-context";
   import { IEvent } from "app-calendar";
   import { MerchProps } from "store-context";
   import { ISubscription, UserSchema } from "auth-context";
   import { AppAssets, FORM_STATUS } from "app-admin";
-  import { APP_ACTIONS } from "@actions/AppActions";
   import {
     AdminIdProps,
     AppListProps,
@@ -146,7 +147,6 @@ declare module "app-context" {
     contactApp: (props: ContactApp) => void;
     createMap: (props: AppMap) => void;
     updateMap: (props: AppMap) => void;
-    updateActiveAppData: (props: ActiveMenuProp) => void;
     // createTaskBoard: (props: TaskBoardValues) => void;
     // editTaskBoard: (props: TaskBoardValues) => void;
     // getTaskBoard: (props: TaskBoardValues) => void;
@@ -200,51 +200,50 @@ declare module "app-context" {
     menu?: MenuProp[];
     updateAppData?: (a: AppProps) => void;
     updateUser?: (a: UserSchema) => void;
-    updateActiveAppData?: (a: ActiveMenuProp) => void;
   }
 
   export type AppActionProps =
-    | { type: APP_ACTIONS.IS_LOADING | APP_ACTIONS.COOMING_SOON; payload: boolean }
-    | { type: APP_ACTIONS.SET_LOADING_STATE; payload: { [key: string]: boolean } }
-    | { type: APP_ACTIONS.SET_REQUEST_STATUS; payload: FORM_STATUS }
+    | { type: A_APP.IS_LOADING | A_APP.COOMING_SOON; payload: boolean }
+    | { type: A_APP.SET_LOADING_STATE; payload: { [key: string]: boolean } }
+    | { type: A_APP.SET_REQUEST_STATUS; payload: FORM_STATUS }
     | {
         type:
-          | APP_ACTIONS.SET_APP_ID
-          | APP_ACTIONS.SET_APP_URL
-          | APP_ACTIONS.SET_APP_LINK
-          | APP_ACTIONS.SET_ACTIVE_APP_ID
-          | APP_ACTIONS.SET_APP_LOGO
-          | APP_ACTIONS.SET_ACTIVE_LOGO
-          | APP_ACTIONS.SET_APP_NAME
-          | APP_ACTIONS.SET_APP_ERROR
-          | APP_ACTIONS.SET_LOCALE
-          | APP_ACTIONS.SET_DB_VERSION
-          | APP_ACTIONS.SET_APP_MESSAGE
-          | APP_ACTIONS.SET_ACTIVE_APP_NAME
-          | APP_ACTIONS.SET_REDIRECT_URL;
+          | A_APP.SET_APP_ID
+          | A_APP.SET_APP_URL
+          | A_APP.SET_APP_LINK
+          | A_APP.SET_ACTIVE_APP_ID
+          | A_APP.SET_APP_LOGO
+          | A_APP.SET_ACTIVE_LOGO
+          | A_APP.SET_APP_NAME
+          | A_APP.SET_APP_ERROR
+          | A_APP.SET_LOCALE
+          | A_APP.SET_DB_VERSION
+          | A_APP.SET_APP_MESSAGE
+          | A_APP.SET_ACTIVE_APP_NAME
+          | A_APP.SET_REDIRECT_URL;
         payload: string;
       }
-    | { type: APP_ACTIONS.SET_THEME_LIST; payload: ThemeList[] }
-    | { type: APP_ACTIONS.SET_APP_MAPS; payload: IMaps[] }
-    | { type: APP_ACTIONS.SET_LANGUAGES; payload: MenuProp[] }
-    | { type: APP_ACTIONS.SET_STRIPE_CONFIG; payload: StripeConfig }
-    | { type: APP_ACTIONS.SET_OWNER; payload: UserSchema }
-    | { type: APP_ACTIONS.SET_APP_USERS; payload: UserSchema[] }
-    | { type: APP_ACTIONS.SET_STORE_INVENTORY; payload: MerchProps[] }
-    | { type: APP_ACTIONS.SET_APP_TASKS; payload: Boards }
-    | { type: APP_ACTIONS.SET_APP_BOARD_TASKS; payload: Boards[] }
-    | { type: APP_ACTIONS.SET_APP_POSTS; payload: Posts[] }
-    | { type: APP_ACTIONS.SET_ACTIVE_MENU | APP_ACTIONS.SET_MENU; payload: MenuProp[] }
-    | { type: APP_ACTIONS.SET_LANDING | APP_ACTIONS.SET_ACTIVE_PAGE | APP_ACTIONS.SET_PAGE; payload: PageProps }
-    | { type: APP_ACTIONS.SET_PAGES; payload: PageProps[] }
-    | { type: APP_ACTIONS.SET_APP_MESSAGES; payload: Message[] }
-    | { type: APP_ACTIONS.SET_STORE; payload: StoreProps }
-    | { type: APP_ACTIONS.SET_CALENDAR; payload: CalendarProps }
-    | { type: APP_ACTIONS.SET_APP_LIST; payload: AppListProps[] }
-    | { type: APP_ACTIONS.SET_APP_SUBSCRIPTIONS | APP_ACTIONS.SET_PLATFORM_TIERS; payload: ISubscription[] }
-    | { type: APP_ACTIONS.SET_NEWSLETTER; payload: NewsletterProps }
-    | { type: APP_ACTIONS.SET_MEDIA | APP_ACTIONS.SET_ACTIVE_MEDIA; payload: MediaProps }
-    | { type: APP_ACTIONS.SET_NOTIFICATIONS; payload: Notification[] }
-    | { type: APP_ACTIONS.SET_MEDIA_ITEM; payload: MediaItemProp }
-    | { type: APP_ACTIONS.SET_ADMIN_IDS; payload: AdminIdProps[] };
+    | { type: A_APP.SET_THEME_LIST; payload: ThemeList[] }
+    | { type: A_APP.SET_APP_MAPS; payload: IMaps[] }
+    | { type: A_APP.SET_LANGUAGES; payload: MenuProp[] }
+    | { type: A_APP.SET_STRIPE_CONFIG; payload: StripeConfig }
+    | { type: A_APP.SET_OWNER; payload: UserSchema }
+    | { type: A_APP.SET_APP_USERS; payload: UserSchema[] }
+    | { type: A_APP.SET_STORE_INVENTORY; payload: MerchProps[] }
+    | { type: A_APP.SET_APP_TASKS; payload: Boards }
+    | { type: A_APP.SET_APP_BOARD_TASKS; payload: Boards[] }
+    | { type: A_APP.SET_APP_POSTS; payload: Posts[] }
+    | { type: A_APP.SET_ACTIVE_MENU | A_APP.SET_MENU; payload: MenuProp[] }
+    | { type: A_APP.SET_LANDING | A_APP.SET_ACTIVE_PAGE | A_APP.SET_PAGE; payload: PageProps }
+    | { type: A_APP.SET_PAGES; payload: PageProps[] }
+    | { type: A_APP.SET_APP_MESSAGES; payload: Message[] }
+    | { type: A_APP.SET_STORE; payload: StoreProps }
+    | { type: A_APP.SET_CALENDAR; payload: CalendarProps }
+    | { type: A_APP.SET_APP_LIST; payload: AppListProps[] }
+    | { type: A_APP.SET_APP_SUBSCRIPTIONS | A_APP.SET_PLATFORM_TIERS; payload: ISubscription[] }
+    | { type: A_APP.SET_NEWSLETTER; payload: NewsletterProps }
+    | { type: A_APP.SET_MEDIA | A_APP.SET_ACTIVE_MEDIA; payload: MediaProps }
+    | { type: A_APP.SET_NOTIFICATIONS; payload: Notification[] }
+    | { type: A_APP.SET_MEDIA_ITEM; payload: MediaItemProp }
+    | { type: A_APP.SET_ADMIN_IDS; payload: AdminIdProps[] };
 }

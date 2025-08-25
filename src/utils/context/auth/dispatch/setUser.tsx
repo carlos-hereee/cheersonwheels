@@ -1,9 +1,9 @@
-import { A_AUTH } from '@actions/AuthActions';
-import { userMinData } from '@app/userMinData';
-import { AuthDispatchProps } from 'auth-context';
+import { A_AUTH } from "@utils/actions/AuthActions";
+import { userMinData } from "@app/userMinData";
+import type { AuthDispatchProps } from "auth-context";
 
 export const setUser = ({ user, dispatch, setUserData }: AuthDispatchProps) => {
-  if (!user) throw Error('user is required');
+  if (!user) throw Error("user is required");
   const formatUser = userMinData(user);
   dispatch({ type: A_AUTH.IS_LOADING, payload: true });
   dispatch({ type: A_AUTH.SET_USER_DATA, payload: formatUser });

@@ -1,4 +1,4 @@
-declare module 'app-types' {
+declare module "app-types" {
   export interface ChildProps {
     children: React.ReactNode;
   }
@@ -40,7 +40,7 @@ declare module 'app-types' {
       }>;
     };
   }
-  export type RequestStatus = 'IDLE' | 'SUCCESS' | 'ERROR';
+  export type RequestStatus = "IDLE" | "SUCCESS" | "ERROR";
   export interface AppDetailsProps {
     locale?: string;
     appName: string;
@@ -250,23 +250,23 @@ declare module 'app-types' {
     onMediaClick?: (key: MediaItemProp) => void;
   }
   export type DialogStatusProps =
-    | 'idle'
-    | 'confirm-cancel'
-    | 'confirm-event-cancel'
-    | 'configuration'
-    | 'phase-one'
-    | 'phase-two'
-    | 'phase-three'
-    | 'phase-four'
-    | 'phase-add-page-event'
-    | 'phase-view-event'
-    | 'phase-view-task-event'
-    | 'phase-add-task-event'
-    | 'phase-edit-task-event'
-    | 'phase-view-order'
-    | 'phase-add-event'
-    | 'phase-view-balance'
-    | 'phase-edit';
+    | "idle"
+    | "confirm-cancel"
+    | "confirm-event-cancel"
+    | "configuration"
+    | "phase-one"
+    | "phase-two"
+    | "phase-three"
+    | "phase-four"
+    | "phase-add-page-event"
+    | "phase-view-event"
+    | "phase-view-task-event"
+    | "phase-add-task-event"
+    | "phase-edit-task-event"
+    | "phase-view-order"
+    | "phase-add-event"
+    | "phase-view-balance"
+    | "phase-edit";
   export interface AppDialogProps {
     pages: boolean;
     media: boolean;
@@ -280,12 +280,7 @@ declare module 'app-types' {
     name: AppSettingDialogOptions;
     stat: DialogStatusProps;
   }
-  export type AppSettingDialogOptions =
-    | 'pages'
-    | 'media'
-    | 'store'
-    | 'app'
-    | 'calendar';
+  export type AppSettingDialogOptions = "pages" | "media" | "store" | "app" | "calendar";
   export interface SectionProps {
     title: string;
     uid: string;
@@ -334,7 +329,7 @@ declare module 'app-types' {
   export interface MenuProp {
     uid: string;
     menuId: string;
-    category: 'page' | 'calendar' | 'store' | 'home';
+    category: "page" | "calendar" | "store" | "home";
     name: string;
     value: string;
     label: string;

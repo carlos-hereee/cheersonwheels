@@ -1,18 +1,18 @@
-import { STORE_ACTIONS } from "@actions/StoreActions";
-import { axiosAuth } from "@axios/axiosAuth";
-import { StoreDispatchProps } from "store-context";
+import { A_STORE } from "@utils/actions/StoreActions";
+import { axiosAuth } from "@utils/axios/axiosAuth";
+import type { StoreDispatchProps } from "store-context";
 
 export const requestSecret = async (props: StoreDispatchProps) => {
   const { dispatch, cart } = props;
   try {
-    dispatch({ type: STORE_ACTIONS.IS_LOADING, payload: true });
+    dispatch({ type: A_STORE.IS_LOADING, payload: true });
     if (cart) {
       const { data } = await axiosAuth.post("/store/request-secret", { cart });
-      dispatch({ type: STORE_ACTIONS.SET_STRIPE_SECRET, payload: data });
+      dispatch({ type: A_STORE.SET_STRIPE_SECRET, payload: data as string });
     }
-    dispatch({ type: STORE_ACTIONS.IS_LOADING, payload: false });
+    dispatch({ type: A_STORE.IS_LOADING, payload: false });
   } catch (error) {
     console.log("error :>> ", error);
-    dispatch({ type: STORE_ACTIONS.IS_LOADING, payload: false });
+    dispatch({ type: A_STORE.IS_LOADING, payload: false });
   }
 };

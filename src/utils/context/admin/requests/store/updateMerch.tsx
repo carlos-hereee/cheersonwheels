@@ -1,7 +1,7 @@
-import { ADMIN_ACTIONS } from "@actions/AdminActions";
-import { axiosAuth } from "@axios/axiosAuth";
-import { axiosError } from "@axios/axiosError";
-import { axiosMedia } from "@axios/axiosMedia";
+import { A_ADMIN } from "@utils/actions/AdminActions";
+import { axiosAuth } from "@utils/axios/axiosAuth";
+import { axiosError } from "@utils/axios/axiosError";
+import { axiosMedia } from "@utils/axios/axiosMedia";
 import { AdminDisptachProps } from "app-admin";
 import { MerchProps } from "store-context";
 
@@ -10,8 +10,8 @@ export const updateMerch = async ({ dispatch, handleAppAssets, values, appId, me
   if (!handleAppAssets) throw Error("handleAppAssets is required");
   if (!values) throw Error("values is required");
   try {
-    dispatch({ type: ADMIN_ACTIONS.IS_LOADING, payload: true });
-    dispatch({ type: ADMIN_ACTIONS.SET_FORM_STATUS, payload: "LOADING" });
+    dispatch({ type: A_ADMIN.IS_LOADING, payload: true });
+    dispatch({ type: A_ADMIN.SET_FORM_STATUS, payload: "LOADING" });
     if ((values as MerchProps).merchId) {
       const { data } = await axiosAuth.put(`/store/update-merch/${appId}/stripe`, { merch: values });
       if (data) handleAppAssets(data);

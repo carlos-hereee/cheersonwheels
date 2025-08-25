@@ -1,5 +1,5 @@
-// import { ADMIN_ACTIONS } from "@actions/AdminActions";
-// import { axiosAuth } from "@axios/axiosAuth";
+// import { A_ADMIN } from "@utils/actions/AdminActions";
+// import { axiosAuth } from "@utils/axios/axiosAuth";
 // import { AdminDisptachProps } from "app-admin";
 
 // export const getBucket = async ({ appId, dispatch }: AdminDisptachProps) => {
@@ -8,6 +8,6 @@
 //     console.log("data :>> ", data);
 //   } catch (error) {
 //     // isDev && console.log("error", error);
-//     dispatch({ type: ADMIN_ACTIONS.IS_LOADING, payload: false });
+//     dispatch({ type: A_ADMIN.IS_LOADING, payload: false });
 //   }
 // };

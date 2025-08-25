@@ -1,10 +1,12 @@
-declare module 'auth-context' {
-  import { OrderSchema, StripeConfirmationProps } from 'store-context';
-  import { UserBoards } from 'user-context';
-  import { IEvent } from 'app-calendar';
-  import { A_AUTH } from '@actions/AuthActions';
-  import { AuthErrorTarget } from 'app-errors';
-  import { AppListProps, Message, Notification } from 'app-types';
+/* eslint-disable no-unused-vars */
+
+declare module "auth-context" {
+  import { OrderSchema, StripeConfirmationProps } from "store-context";
+  import { UserBoards } from "user-context";
+  import { IEvent } from "app-calendar";
+  import { A_AUTH } from "@utils/actions/AuthActions";
+  import { AuthErrorTarget } from "err-app";
+  import { AppListProps, Message, Notification } from "app-types";
   import {
     AuthFormValueProps,
     EmailParam,
@@ -12,7 +14,7 @@ declare module 'auth-context' {
     FormProps,
     LoginValues,
     RegisterFormProps,
-  } from 'app-forms';
+  } from "app-forms";
 
   export interface AuthErrorProps {
     logout: string;
@@ -31,7 +33,7 @@ declare module 'auth-context' {
     featureId: string;
     name: string;
     value: string;
-    valueType: 'Checkbox' | 'Message';
+    valueType: "Checkbox" | "Message";
   }
   export interface AddressSchema {
     address: string;
@@ -45,7 +47,7 @@ declare module 'auth-context' {
     thumbnail: string;
     name: string;
     description: string;
-    recurring: 'day' | 'month' | 'week' | 'year';
+    recurring: "day" | "month" | "week" | "year";
     cost: number;
     productId: string;
     priceId: string;

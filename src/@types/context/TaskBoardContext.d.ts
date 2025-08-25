@@ -1,6 +1,6 @@
 declare module "task-board-context" {
   import { Message } from "app-types";
-  import { TASK_ACTIONS } from "@actions/TaskBoardAction";
+  import { A_TASK } from "@utils/actions/TaskBoardAction";
 
   export interface UserData {
     name: string;
@@ -91,8 +91,8 @@ declare module "task-board-context" {
     listId?: string;
   }
   export type AppActionProps =
-    | { type: TASK_ACTIONS.IS_LOADING; payload: boolean }
-    | { type: TASK_ACTIONS.SET_REQUEST_STATUS; payload: RequestStatus }
-    | { type: TASK_ACTIONS.SET_TASK_BOARD; payload: Boards }
-    | { type: TASK_ACTIONS.SET_TASK_BOARDS; payload: Boards[] };
+    | { type: A_TASK.IS_LOADING; payload: boolean }
+    | { type: A_TASK.SET_REQUEST_STATUS; payload: RequestStatus }
+    | { type: A_TASK.SET_TASK_BOARD; payload: Boards }
+    | { type: A_TASK.SET_TASK_BOARDS; payload: Boards[] };
 }

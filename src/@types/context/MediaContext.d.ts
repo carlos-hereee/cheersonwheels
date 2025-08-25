@@ -1,6 +1,8 @@
-declare module 'media-context' {
-  import { Message } from 'app-types';
-  import { MEDIA_AUTH } from '@actions/MediaActions';
+/* eslint-disable no-unused-vars */
+
+declare module "media-context" {
+  import type { A_MEDIA } from "@utils/actions/MediaActions";
+  import { Message } from "app-types";
 
   export interface UserPostData {
     avatar: string;
@@ -67,8 +69,8 @@ declare module 'media-context' {
     posts?: Post[];
   }
   export type MediaActionProps =
-    | { type: MEDIA_AUTH.IS_LOADING; payload: boolean }
-    | { type: MEDIA_AUTH.SET_ERROR | MEDIA_AUTH.SET_REQUEST_STATUS; payload: string }
-    | { type: MEDIA_AUTH.SET_POST; payload: Post }
-    | { type: MEDIA_AUTH.SET_POSTS; payload: Post[] };
+    | { type: A_MEDIA.IS_LOADING; payload: boolean }
+    | { type: A_MEDIA.SET_ERROR | A_MEDIA.SET_REQUEST_STATUS; payload: string }
+    | { type: A_MEDIA.SET_POST; payload: Post }
+    | { type: A_MEDIA.SET_POSTS; payload: Post[] };
 }

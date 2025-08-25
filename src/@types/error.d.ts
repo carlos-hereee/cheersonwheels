@@ -1,4 +1,4 @@
-declare module "app-errors" {
+declare module "oops-err" {
   import { AdminActionProps } from "app-admin";
   import { AppActionProps } from "app-context";
   import { LogActionProps } from "log-context";
@@ -8,8 +8,10 @@ declare module "app-errors" {
     error: unknown;
     message?: string;
     target?: string;
+    code?: string;
+    status?: number;
+    response?: { data: unknown };
   }
-
   export type AuthErrorTarget =
     | "logout"
     | "login"

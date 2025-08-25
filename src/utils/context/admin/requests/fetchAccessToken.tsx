@@ -1,5 +1,5 @@
-import { axiosAuth } from "@axios/axiosAuth";
-import { axiosError } from "@axios/axiosError";
+import { axiosAuth } from "@utils/axios/axiosAuth";
+import { axiosError } from "@utils/axios/axiosError";
 import { AdminDisptachProps } from "app-admin";
 
 export const fetchAccessToken = async ({ handleAppAssets, dispatch }: AdminDisptachProps) => {

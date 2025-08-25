@@ -3,7 +3,6 @@ import { useRef, useEffect } from "react";
 export const useDrag = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const button = buttonRef.current;
 

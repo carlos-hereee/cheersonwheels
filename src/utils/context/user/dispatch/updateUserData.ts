@@ -1,12 +1,10 @@
-import { USER_ACTIONS } from "@actions/UserActions";
-import { userMinData } from "@app/userMinData";
-import { UserDispatchProps } from "user-context";
+import { USER_ACTIONS } from "@utils/actions/UserActions";
+import type { UserDispatchProps } from "user-context";
 
 export const updateUserData = ({ user, dispatch }: UserDispatchProps) => {
   if (!user) throw Error("param user is required");
-  const formatUser = userMinData(user);
   dispatch({ type: USER_ACTIONS.IS_LOADING, payload: true });
-  dispatch({ type: USER_ACTIONS.SET_USER_DATA, payload: formatUser });
+  dispatch({ type: USER_ACTIONS.SET_USER_DATA, payload: user });
   if (user.calendarEvents) dispatch({ type: USER_ACTIONS.SET_USER_CALENDAR, payload: user.calendarEvents });
   if (user.boards) dispatch({ type: USER_ACTIONS.SET_USER_TASK_BOARD, payload: user.boards });
   // if (user.subscriptions) dispatch({ type: USER_ACTIONS.SET_SUBSCRIPTIONS, payload: user.subscriptions });

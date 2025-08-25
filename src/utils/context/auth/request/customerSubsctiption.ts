@@ -1,6 +1,6 @@
-import { axiosAuth } from "@axios/axiosAuth";
-import { isDev } from "@config";
-import { AuthDispatchProps } from "auth-context";
+import { axiosAuth } from "@utils/axios/axiosAuth";
+import { isDev } from "@utils/config";
+import type { AuthDispatchProps } from "auth-context";
 
 export const customerSubscription = async ({ plan }: AuthDispatchProps) => {
   try {

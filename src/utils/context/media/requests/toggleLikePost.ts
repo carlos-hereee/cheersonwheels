@@ -1,6 +1,6 @@
-import { axiosAuth } from "@axios/axiosAuth";
-import { isDev } from "@config";
-import { MediaDispatchProps } from "media-context";
+import { axiosAuth } from "@utils/axios/axiosAuth";
+import { isDev } from "@utils/config";
+import type { MediaDispatchProps } from "media-context";
 
 export const toggleLikePost = async ({ postId, updateUser }: MediaDispatchProps) => {
   try {

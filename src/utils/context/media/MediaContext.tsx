@@ -1,16 +1,16 @@
-import { createContext, useCallback, useContext, useMemo, useReducer } from 'react';
-import mediaState from '@data/state/mediaState.json';
-import { ChildProps } from 'app-types';
-import { CreatePost, IMediaState, Post, PostReply } from 'media-context';
-import { MEDIA_AUTH } from '@actions/MediaActions';
-import { AuthContext } from '@context/auth/AuthContext';
-import { reducer } from './MediaReducer';
-import { createPost } from './requests/createPost';
-import { fetchPosts } from './requests/fetchPosts';
-import { addMessageReply, addReplyToPost } from './requests/addReplyToPost';
-import { toggleLikePost, toggleLikeMsg } from './requests/toggleLikePost';
-import { editPost } from './dispatch/editPost';
-import { removePost } from './requests/removePost';
+import { createContext, useCallback, useContext, useMemo, useReducer } from "react";
+import mediaState from "@data/state/mediaState.json";
+import type { ChildProps } from "app-types";
+import type { CreatePost, IMediaState, Post, PostReply } from "media-context";
+import { AuthContext } from "@utils/context/auth/AuthContext";
+import { reducer } from "./MediaReducer";
+import { createPost } from "./requests/createPost";
+import { fetchPosts } from "./requests/fetchPosts";
+import { addMessageReply, addReplyToPost } from "./requests/addReplyToPost";
+import { toggleLikePost, toggleLikeMsg } from "./requests/toggleLikePost";
+import { editPost } from "./dispatch/editPost";
+import { removePost } from "./requests/removePost";
+import { A_MEDIA } from "@utils/actions/MediaActions";
 
 export const MediaContext = createContext<IMediaState>({} as IMediaState);
 
@@ -19,13 +19,10 @@ export const MediaState = ({ children }: ChildProps) => {
   const { updateUser } = useContext(AuthContext);
 
   const updatePost = useCallback((data: PostReply) => editPost({ dispatch, ...data }), []);
-  const setLoading = useCallback((loading: boolean) => dispatch({ type: MEDIA_AUTH.IS_LOADING, payload: loading }), []);
-  const setRequestStatus = useCallback(
-    (s: string) => dispatch({ type: MEDIA_AUTH.SET_REQUEST_STATUS, payload: s }),
-    [],
-  );
+  const setLoading = useCallback((loading: boolean) => dispatch({ type: A_MEDIA.IS_LOADING, payload: loading }), []);
+  const setRequestStatus = useCallback((s: string) => dispatch({ type: A_MEDIA.SET_REQUEST_STATUS, payload: s }), []);
   const getPosts = useCallback((appId: string) => fetchPosts({ dispatch, appId }), []);
-  const updatePosts = useCallback((posts: Post[]) => dispatch({ type: MEDIA_AUTH.SET_POSTS, payload: posts }), []);
+  const updatePosts = useCallback((posts: Post[]) => dispatch({ type: A_MEDIA.SET_POSTS, payload: posts }), []);
   const addPost = useCallback((post: CreatePost) => createPost({ dispatch, ...post }), []);
   const deletePost = useCallback((appId: string, postId: string) => removePost({ dispatch, postId, appId }), []);
 

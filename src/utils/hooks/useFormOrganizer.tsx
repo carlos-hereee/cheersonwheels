@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { InitAppProps, AppValues } from "app-forms";
-import { StringObjProp, MediaProps, NewsletterProps, PageProps } from "app-types";
+import type { InitAppProps, AppValues } from "app-forms";
+import type { StringObjProp, MediaProps, NewsletterProps, PageProps } from "app-types";
 
 export const useFormOrganizer = () => {
   const [isFormLoading, setFormLoading] = useState<boolean>(true);

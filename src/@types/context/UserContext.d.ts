@@ -2,8 +2,8 @@ declare module "user-context" {
   import { Boards } from "app-types";
   import { IEvent } from "app-calendar";
   import { Post } from "media-context";
-  import { USER_ACTIONS } from "@actions/UserActions";
-  import { UserSchema } from "auth-context";
+  import { USER_ACTIONS } from "@utils/actions/UserActions";
+  import type { UserSchema } from "auth-context";
 
   export interface DUser {
     post?: Post;

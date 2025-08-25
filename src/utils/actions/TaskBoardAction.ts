@@ -1,4 +1,5 @@
-export enum TASK_ACTIONS {
+/* eslint-disable no-unused-vars */
+export enum A_TASK {
   IS_LOADING,
   SET_TASK_BOARD,
   SET_REQUEST_STATUS,

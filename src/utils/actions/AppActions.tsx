@@ -1,4 +1,5 @@
-export enum APP_ACTIONS {
+/* eslint-disable no-unused-vars */
+export enum A_APP {
   IS_LOADING,
   SET_UPLOAD_FILE_ERROR,
   SET_ADMIN_IDS,

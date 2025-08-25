@@ -1,7 +1,6 @@
-import { ChildProps } from "app-types";
-import { createContext, useCallback, useMemo, useReducer } from "react";
-import { Boards, TaskBoardSchema, TaskBoardValues } from "task-board-context";
-import { TASK_ACTIONS } from "@actions/TaskBoardAction";
+import type { ChildProps } from "app-types";
+import { useCallback, useMemo, useReducer } from "react";
+import type { Boards, TaskBoardValues } from "task-board-context";
 import taskBoard from "@data/state/taskBoardState.json";
 import { reducer } from "./TaskBoardReducer";
 import { buildTaskBoard } from "./request/buildTaskBoard";
@@ -14,13 +13,17 @@ import { replyToTaskComment } from "./request/replyToTaskComment";
 import { updateBoardListTask } from "./request/updateBoardListTask";
 import { updateTaskBoardInivite } from "./request/updateTaskBoardInivite";
 import { assignToTask } from "./request/assignToTask";
+import { A_TASK } from "@utils/actions/TaskBoardAction";
+import { TaskBoardContext } from "./TaskboardInstance";
 
-export const TaskBoardContext = createContext<TaskBoardSchema>({} as TaskBoardSchema);
 export const TaskBoardState = ({ children }: ChildProps) => {
   const [state, dispatch] = useReducer(reducer, { ...taskBoard, requestStatus: "IDLE" });
   // const { updateUser } = useContext(AuthContext);
 
-  const setRequestStatus = useCallback((data: string) => dispatch({ type: TASK_ACTIONS.SET_REQUEST_STATUS, payload: data }), []);
+  const setRequestStatus = useCallback(
+    (data: string) => dispatch({ type: A_TASK.SET_REQUEST_STATUS, payload: data }),
+    [],
+  );
   // const createTaskBoard = useCallback((data: TaskBoardValues) => buildTaskBoard({ dispatch, ...data, updateAppData }), []);
   const createTaskBoard = useCallback((data: TaskBoardValues) => buildTaskBoard({ dispatch, ...data }), []);
   // const addBoardListTask = useCallback((data: TaskBoardValues) => buildBoardListTask({ dispatch, ...data, updateAppData }), []);
@@ -28,12 +31,15 @@ export const TaskBoardState = ({ children }: ChildProps) => {
   const editTaskBoard = useCallback((data: TaskBoardValues) => updateTaskBoard({ dispatch, ...data }), []);
   const getTaskBoard = useCallback((data: TaskBoardValues) => getTaskBoardWithId({ dispatch, ...data }), []);
   const removeTaskFromList = useCallback((data: TaskBoardValues) => deleteTaskFromList({ dispatch, ...data }), []);
-  const getBoardWithBoardId = useCallback((data: TaskBoardValues) => getTaskBoardWithBoardId({ dispatch, ...data }), []);
+  const getBoardWithBoardId = useCallback(
+    (data: TaskBoardValues) => getTaskBoardWithBoardId({ dispatch, ...data }),
+    [],
+  );
   const getAllTaskBoard = useCallback((data: TaskBoardValues) => getAllAppTaskBoards({ dispatch, ...data }), []);
   const addCommentTask = useCallback((data: TaskBoardValues) => postCommentToTask({ dispatch, ...data }), []);
   const replyToComment = useCallback((data: TaskBoardValues) => replyToTaskComment({ dispatch, ...data }), []);
   const setTaskBoard = useCallback((data: TaskBoardValues) => updateBoardListTask({ dispatch, ...data }), []);
-  const setActiveBoard = useCallback((data: Boards) => dispatch({ type: TASK_ACTIONS.SET_TASK_BOARD, payload: data }), []);
+  const setActiveBoard = useCallback((data: Boards) => dispatch({ type: A_TASK.SET_TASK_BOARD, payload: data }), []);
   const taskBoardInvitation = useCallback((data: TaskBoardValues) => updateTaskBoardInivite({ dispatch, ...data }), []);
   const assignMemberToTask = useCallback((data: TaskBoardValues) => assignToTask({ dispatch, ...data }), []);
 

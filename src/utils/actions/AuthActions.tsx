@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export enum A_AUTH {
   // boolean payloads
   IS_LOADING,

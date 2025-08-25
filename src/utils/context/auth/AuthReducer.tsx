@@ -1,5 +1,5 @@
-import { A_AUTH } from '@actions/AuthActions';
-import { AuthStateProps, AuthActionProps } from 'auth-context';
+import { A_AUTH } from "@utils/actions/AuthActions";
+import { AuthStateProps, AuthActionProps } from "auth-context";
 
 export const reducer = (state: AuthStateProps, action: AuthActionProps): AuthStateProps => {
   switch (action.type) {

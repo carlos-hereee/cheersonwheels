@@ -1,11 +1,9 @@
-import { createContext, useCallback, useMemo, useReducer } from "react";
+import { useCallback, useMemo, useReducer } from "react";
 import storeState from "@data/state/storeState.json";
-import { ChildProps } from "app-types";
-import { STORE_ACTIONS } from "@actions/StoreActions";
-import {
+import type { ChildProps } from "app-types";
+import type {
   CartProps,
   OrderSchema,
-  StoreSchema,
   StoreCheckout,
   PayoutAmmount,
   CheckoutIntent,
@@ -26,13 +24,17 @@ import { trackCheckoutOrder } from "./request/trackCheckoutOrder";
 import { addReview } from "./request/addReview";
 import { getMerchWithId } from "./request/getMerchWithId";
 import { addReviewMessage } from "./request/addReviewMessage";
+import { A_STORE } from "@utils/actions/StoreActions";
+import { StoreContext } from "./StoreInstance";
 
-export const StoreContext = createContext<StoreSchema>({} as StoreSchema);
 export const StoreState = ({ children }: ChildProps) => {
   const [state, dispatch] = useReducer(reducer, storeState);
 
-  const setLoading = useCallback((loading: boolean) => dispatch({ type: STORE_ACTIONS.IS_LOADING, payload: loading }), []);
-  const setTrackOrder = useCallback((data?: OrderSchema) => dispatch({ type: STORE_ACTIONS.SET_TRACK_ORDER, payload: data }), []);
+  const setLoading = useCallback((loading: boolean) => dispatch({ type: A_STORE.IS_LOADING, payload: loading }), []);
+  const setTrackOrder = useCallback(
+    (data?: OrderSchema) => dispatch({ type: A_STORE.SET_TRACK_ORDER, payload: data }),
+    [],
+  );
 
   const submitOrder = useCallback((cart: CartProps[]) => requestSecret({ cart, dispatch }), []);
   // stripe checkout session

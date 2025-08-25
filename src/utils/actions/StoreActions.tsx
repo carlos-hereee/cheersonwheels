@@ -1,4 +1,5 @@
-export enum STORE_ACTIONS {
+/* eslint-disable no-unused-vars */
+export enum A_STORE {
   IS_LOADING,
   ADD_TO_CART,
   REMOVE_FROM_CART,

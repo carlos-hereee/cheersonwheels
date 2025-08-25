@@ -1,4 +1,5 @@
-export enum LOG_ACTIONS {
+/* eslint-disable no-unused-vars */
+export enum A_LOG {
   IS_LOADING,
   REMOVE_MESSAGE_FROM_LOG,
   ADD_MESSAGE_TO_LOG,

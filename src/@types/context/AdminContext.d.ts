@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 declare module "app-admin" {
   import { Post } from "media-context";
   import { OrderSchema, StoreOrderUpdate } from "store-context";
   import { MenuItemProp, PageProps, StoreProps, CalendarProps } from "app-types";
-  import { ADMIN_ACTIONS } from "@actions/AdminActions";
+  import { A_ADMIN } from "@utils/actions/AdminActions";
   import { AppListProps, AppProps, StripeConfig } from "app-context";
   import { ISubscription, UserSchema } from "auth-context";
   import { FormProps, AppValues, SectionEntryOganizer, FormValueData, StoreReq } from "app-forms";
@@ -134,8 +135,8 @@ declare module "app-admin" {
     values?: AppValues;
   }
   export type AdminActionProps =
-    | { type: ADMIN_ACTIONS.IS_LOADING; payload: boolean }
-    | { type: ADMIN_ACTIONS.SET_FORM_STATUS; payload: FORM_STATUS }
-    | { type: ADMIN_ACTIONS.SET_WEBHOOKS; payload: WebhookSchema[] }
-    | { type: ADMIN_ACTIONS.SET_FORM_ERRORS; payload: AdminFormErrors };
+    | { type: A_ADMIN.IS_LOADING; payload: boolean }
+    | { type: A_ADMIN.SET_FORM_STATUS; payload: FORM_STATUS }
+    | { type: A_ADMIN.SET_WEBHOOKS; payload: WebhookSchema[] }
+    | { type: A_ADMIN.SET_FORM_ERRORS; payload: AdminFormErrors };
 }

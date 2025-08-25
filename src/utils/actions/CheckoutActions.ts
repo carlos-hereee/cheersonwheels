@@ -1,4 +1,5 @@
-export enum CHECKOUT_ACTIONS {
+/* eslint-disable no-unused-vars */
+export enum A_CHECKOUT {
   IS_LOADING,
   SET_REQUEST_STATUS,
   UPDATE_CART,

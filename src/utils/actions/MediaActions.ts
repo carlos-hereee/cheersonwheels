@@ -1,4 +1,5 @@
-export enum MEDIA_AUTH {
+/* eslint-disable no-unused-vars */
+export enum A_MEDIA {
   // boolean payloads
   IS_LOADING,
   SET_ERROR,

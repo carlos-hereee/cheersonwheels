@@ -1,5 +1,5 @@
-import { axiosAuth } from "@axios/axiosAuth";
-import { AuthDispatchProps } from "auth-context";
+import { axiosAuth } from "@utils/axios/axiosAuth";
+import type { AuthDispatchProps } from "auth-context";
 
 export const editUserRequest = async ({ user, updateUser }: AuthDispatchProps) => {
   // require key variable

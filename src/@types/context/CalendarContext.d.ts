@@ -1,6 +1,6 @@
 declare module "app-calendar" {
   import { CalendarProps } from "app-types";
-  import { CAL_ACTIONS } from "@actions/CalendarAction";
+  import { A_CALENDAR } from "@utils/actions/CalendarAction";
 
   export type CalEvent = {
     date: string;
@@ -108,23 +108,23 @@ declare module "app-calendar" {
     appId?: string;
   }
   export type CalendarActionProps =
-    | { type: CAL_ACTIONS.IS_LOADING; payload: boolean }
+    | { type: A_CALENDAR.IS_LOADING; payload: boolean }
     | {
         type:
-          | CAL_ACTIONS.SET_ERROR
-          | CAL_ACTIONS.SET_CAL_NAME
-          | CAL_ACTIONS.SET_CAL_ID
-          | CAL_ACTIONS.SET_CAL_LINK
-          | CAL_ACTIONS.SET_CAL_CLOSE_TIME
-          | CAL_ACTIONS.SET_CAL_START_TIME
-          | CAL_ACTIONS.SET_REQUEST_STATUS
-          | CAL_ACTIONS.SET_CAL_WORK_WEEK
-          | CAL_ACTIONS.SET_THEME;
+          | A_CALENDAR.SET_ERROR
+          | A_CALENDAR.SET_CAL_NAME
+          | A_CALENDAR.SET_CAL_ID
+          | A_CALENDAR.SET_CAL_LINK
+          | A_CALENDAR.SET_CAL_CLOSE_TIME
+          | A_CALENDAR.SET_CAL_START_TIME
+          | A_CALENDAR.SET_REQUEST_STATUS
+          | A_CALENDAR.SET_CAL_WORK_WEEK
+          | A_CALENDAR.SET_THEME;
 
         payload: string;
       }
-    | { type: CAL_ACTIONS.SET_CAL_SCHEDULE | CAL_ACTIONS.SET_CAL_EVENTS; payload: IEvent[] }
-    | { type: CAL_ACTIONS.SET_EVENT; payload: IEvent }
-    | { type: CAL_ACTIONS.SET_CAL_SELECTED_DAY; payload: CalEvent }
-    | { type: CAL_ACTIONS.SET_CAL_MEETING; payload: MeetingDetials };
+    | { type: A_CALENDAR.SET_CAL_SCHEDULE | A_CALENDAR.SET_CAL_EVENTS; payload: IEvent[] }
+    | { type: A_CALENDAR.SET_EVENT; payload: IEvent }
+    | { type: A_CALENDAR.SET_CAL_SELECTED_DAY; payload: CalEvent }
+    | { type: A_CALENDAR.SET_CAL_MEETING; payload: MeetingDetials };
 }

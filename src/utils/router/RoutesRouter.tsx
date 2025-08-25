@@ -1,15 +1,15 @@
-import { useContext } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import { PageNotFound } from 'nexious-library';
-import PublicRoute from './PublicRoute';
-import Landing from '@pages/Landing';
-import { AuthContext } from '@utils/context/auth/AuthContext';
+import { useContext } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import { PageNotFound } from "nexious-library";
+import PublicRoute from "./PublicRoute";
+import Landing from "@pages/Landing";
+import { AuthContext } from "@utils/context/auth/AuthContext";
 
-const RoutesRouter: React.FC = () => {
+const RoutesRouter = () => {
   const { accessToken } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const navigateClick = () => navigate(accessToken ? '/dashboard' : '/');
+  const navigateClick = () => navigate(accessToken ? "/dashboard" : "/");
   return (
     <Routes>
       {/* Public Routes */}
@@ -54,7 +54,7 @@ const RoutesRouter: React.FC = () => {
         <Route path="/settings/:appName" element={<AppSettings />} />
       </Route> */}
       {/* All other routes */}
-      <Route path="/*" element={<PageNotFound to={accessToken ? 'dashboard' : 'home'} handleClick={navigateClick} />} />
+      <Route path="/*" element={<PageNotFound to={accessToken ? "dashboard" : "home"} handleClick={navigateClick} />} />
     </Routes>
   );
 };
