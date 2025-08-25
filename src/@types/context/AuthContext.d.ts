@@ -1,11 +1,18 @@
-declare module "auth-context" {
-  import { OrderSchema, StripeConfirmationProps } from "store-context";
-  import { UserBoards } from "user-context";
-  import { IEvent } from "app-calendar";
-  import { A_ACTIONS } from "@actions/AuthActions";
-  import { AuthErrorTarget } from "app-errors";
-  import { AppListProps, Message, Notification } from "app-types";
-  import { AuthFormValueProps, EmailParam, ForgotPasswordValues, FormProps, LoginValues, RegisterFormProps } from "app-forms";
+declare module 'auth-context' {
+  import { OrderSchema, StripeConfirmationProps } from 'store-context';
+  import { UserBoards } from 'user-context';
+  import { IEvent } from 'app-calendar';
+  import { A_AUTH } from '@actions/AuthActions';
+  import { AuthErrorTarget } from 'app-errors';
+  import { AppListProps, Message, Notification } from 'app-types';
+  import {
+    AuthFormValueProps,
+    EmailParam,
+    ForgotPasswordValues,
+    FormProps,
+    LoginValues,
+    RegisterFormProps,
+  } from 'app-forms';
 
   export interface AuthErrorProps {
     logout: string;
@@ -24,7 +31,7 @@ declare module "auth-context" {
     featureId: string;
     name: string;
     value: string;
-    valueType: "Checkbox" | "Message";
+    valueType: 'Checkbox' | 'Message';
   }
   export interface AddressSchema {
     address: string;
@@ -38,7 +45,7 @@ declare module "auth-context" {
     thumbnail: string;
     name: string;
     description: string;
-    recurring: "day" | "month" | "week" | "year";
+    recurring: 'day' | 'month' | 'week' | 'year';
     cost: number;
     productId: string;
     priceId: string;
@@ -190,18 +197,18 @@ declare module "auth-context" {
   }
 
   export type AuthActionProps =
-    | { type: A_ACTIONS.IS_LOADING | A_ACTIONS.SET_PLATFORM_OWNER; payload: boolean }
-    | { type: A_ACTIONS.SET_ACCESS_TOKEN | A_ACTIONS.SET_THEME; payload: string }
-    | { type: A_ACTIONS.SET_OWNED_APPS; payload: AppListProps[] }
-    | { type: A_ACTIONS.SET_DUMMY_DATA; payload: LoginValues }
-    | { type: A_ACTIONS.SET_ORDERS; payload: OrderSchema[] }
-    | { type: A_ACTIONS.SET_ACCOUNT_TIER | A_ACTIONS.SET_UPDATE_TIER; payload: ISubscription | undefined }
-    | { type: A_ACTIONS.SET_ACCOUNT_TIERS; payload: ISubscription[] }
-    | { type: A_ACTIONS.SET_USER_DATA; payload: UserSchema }
-    | { type: A_ACTIONS.SET_USER_MESSAGES; payload: Message[] }
-    | { type: A_ACTIONS.SET_LIKED_POSTS | A_ACTIONS.SET_LIKE_MESSAGES | A_ACTIONS.SET_SUBSCRIPTIONS; payload: string[] }
-    | { type: A_ACTIONS.SET_USER_CONTACTS; payload: UserContact[] }
-    | { type: A_ACTIONS.SET_NOTIFICATIONS; payload: Notification[] }
-    | { type: A_ACTIONS.SET_NOTIFICATION_SETTINGS; payload: NotificationSettings }
-    | { type: A_ACTIONS.SET_ERROR; payload: { [x: AuthErrorTarget]: string } };
+    | { type: A_AUTH.IS_LOADING | A_AUTH.SET_PLATFORM_OWNER; payload: boolean }
+    | { type: A_AUTH.SET_ACCESS_TOKEN | A_AUTH.SET_THEME; payload: string }
+    | { type: A_AUTH.SET_OWNED_APPS; payload: AppListProps[] }
+    | { type: A_AUTH.SET_DUMMY_DATA; payload: LoginValues }
+    | { type: A_AUTH.SET_ORDERS; payload: OrderSchema[] }
+    | { type: A_AUTH.SET_ACCOUNT_TIER | A_AUTH.SET_UPDATE_TIER; payload: ISubscription | undefined }
+    | { type: A_AUTH.SET_ACCOUNT_TIERS; payload: ISubscription[] }
+    | { type: A_AUTH.SET_USER_DATA; payload: UserSchema }
+    | { type: A_AUTH.SET_USER_MESSAGES; payload: Message[] }
+    | { type: A_AUTH.SET_LIKED_POSTS | A_AUTH.SET_LIKE_MESSAGES | A_AUTH.SET_SUBSCRIPTIONS; payload: string[] }
+    | { type: A_AUTH.SET_USER_CONTACTS; payload: UserContact[] }
+    | { type: A_AUTH.SET_NOTIFICATIONS; payload: Notification[] }
+    | { type: A_AUTH.SET_NOTIFICATION_SETTINGS; payload: NotificationSettings }
+    | { type: A_AUTH.SET_ERROR; payload: { [x: AuthErrorTarget]: string } };
 }

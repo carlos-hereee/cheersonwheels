@@ -4,6 +4,7 @@ import { ScrollToTop } from 'nexious-library';
 import './stylesheets/index.css';
 import 'nexious-library/@index.css';
 import App from './App.tsx';
+import RoutesRouter from '@utils/router/RoutesRouter.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>

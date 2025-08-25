@@ -1,0 +1,17 @@
+{
+  "isLoading": false,
+  "error": "",
+  "requestStatus": "",
+  "post": {
+    "uid": "",
+    "postId": "",
+    "appId": "",
+    "updatedAt": "",
+    "thumbnail": "",
+    "name": "",
+    "body": "",
+    "reviews": "",
+    "comments": []
+  },
+  "posts": []
+}

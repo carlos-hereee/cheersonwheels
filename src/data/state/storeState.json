@@ -1,0 +1,33 @@
+{
+  "isLoading": true,
+  "stripeSecret": "",
+  "error": "",
+  "location": "",
+  "location2": "",
+  "cart": [],
+  "stripeConfirmation": {
+    "status": "",
+    "paymentStatus": "",
+    "customer": "",
+    "mode": "",
+    "subscription": "",
+    "intent": "",
+    "customerDetails": {
+      "name": "",
+      "email": "",
+      "phone": ""
+    }
+  },
+  "paypal": {
+    "uid": "payment-2",
+    "type": "paypal",
+    "name": "Paypal",
+    "icon": "paypal",
+    "hero": {
+      "url": "icons/paypal.svg",
+      "small": "small/icons/paypal.jpg",
+      "name": "paypal",
+      "alt": "paypal"
+    }
+  }
+}

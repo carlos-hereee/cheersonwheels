@@ -1,6 +1,6 @@
-declare module "media-context" {
-  import { Message } from "app-types";
-  import { MEDIA_ACTIONS } from "@actions/MediaActions";
+declare module 'media-context' {
+  import { Message } from 'app-types';
+  import { MEDIA_AUTH } from '@actions/MediaActions';
 
   export interface UserPostData {
     avatar: string;
@@ -67,8 +67,8 @@ declare module "media-context" {
     posts?: Post[];
   }
   export type MediaActionProps =
-    | { type: MEDIA_ACTIONS.IS_LOADING; payload: boolean }
-    | { type: MEDIA_ACTIONS.SET_ERROR | MEDIA_ACTIONS.SET_REQUEST_STATUS; payload: string }
-    | { type: MEDIA_ACTIONS.SET_POST; payload: Post }
-    | { type: MEDIA_ACTIONS.SET_POSTS; payload: Post[] };
+    | { type: MEDIA_AUTH.IS_LOADING; payload: boolean }
+    | { type: MEDIA_AUTH.SET_ERROR | MEDIA_AUTH.SET_REQUEST_STATUS; payload: string }
+    | { type: MEDIA_AUTH.SET_POST; payload: Post }
+    | { type: MEDIA_AUTH.SET_POSTS; payload: Post[] };
 }

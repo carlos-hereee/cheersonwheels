@@ -17,17 +17,17 @@
     "baseUrl": "src",
 
     "paths": {
+      // for single files remove star
+      "@utils/*": ["utils/*"],
       "@components/*": ["components/*"],
-      "@data/*": ["data/*"],
       "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"]
+      "@data/*": ["data/*"]
     },
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
+    // "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },

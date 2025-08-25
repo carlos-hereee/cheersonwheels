@@ -1,0 +1,12 @@
+{
+  "isLoading": false,
+  "userRequestStatus": "IDLE",
+  "user": {
+    "username": "",
+    "email": "",
+    "phone": "",
+    "userId": ""
+  },
+  "boards": [],
+  "calendarEvents": []
+}

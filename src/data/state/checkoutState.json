@@ -1,0 +1,20 @@
+{
+  "isLoading": true,
+  "error": "",
+  "merch": {
+    "cost": 0,
+    "inStock": 0,
+    "quantity": 0,
+    "storeId": "",
+    "merchId": "",
+    "priceId": "",
+    "productId": "",
+    "name": "",
+    "body": "",
+    "hero": "",
+    "catalog": [],
+    "reviews": [],
+    "uid": ""
+  },
+  "cart": []
+}

@@ -1,16 +1,16 @@
-import { createContext, useCallback, useContext, useMemo, useReducer } from "react";
-import mediaState from "@data/state/mediaState.json";
-import { ChildProps } from "app-types";
-import { CreatePost, IMediaState, Post, PostReply } from "media-context";
-import { MEDIA_ACTIONS } from "@actions/MediaActions";
-import { AuthContext } from "@context/auth/AuthContext";
-import { reducer } from "./MediaReducer";
-import { createPost } from "./requests/createPost";
-import { fetchPosts } from "./requests/fetchPosts";
-import { addMessageReply, addReplyToPost } from "./requests/addReplyToPost";
-import { toggleLikePost, toggleLikeMsg } from "./requests/toggleLikePost";
-import { editPost } from "./dispatch/editPost";
-import { removePost } from "./requests/removePost";
+import { createContext, useCallback, useContext, useMemo, useReducer } from 'react';
+import mediaState from '@data/state/mediaState.json';
+import { ChildProps } from 'app-types';
+import { CreatePost, IMediaState, Post, PostReply } from 'media-context';
+import { MEDIA_AUTH } from '@actions/MediaActions';
+import { AuthContext } from '@context/auth/AuthContext';
+import { reducer } from './MediaReducer';
+import { createPost } from './requests/createPost';
+import { fetchPosts } from './requests/fetchPosts';
+import { addMessageReply, addReplyToPost } from './requests/addReplyToPost';
+import { toggleLikePost, toggleLikeMsg } from './requests/toggleLikePost';
+import { editPost } from './dispatch/editPost';
+import { removePost } from './requests/removePost';
 
 export const MediaContext = createContext<IMediaState>({} as IMediaState);
 
@@ -19,18 +19,27 @@ export const MediaState = ({ children }: ChildProps) => {
   const { updateUser } = useContext(AuthContext);
 
   const updatePost = useCallback((data: PostReply) => editPost({ dispatch, ...data }), []);
-  const setLoading = useCallback((loading: boolean) => dispatch({ type: MEDIA_ACTIONS.IS_LOADING, payload: loading }), []);
-  const setRequestStatus = useCallback((s: string) => dispatch({ type: MEDIA_ACTIONS.SET_REQUEST_STATUS, payload: s }), []);
+  const setLoading = useCallback((loading: boolean) => dispatch({ type: MEDIA_AUTH.IS_LOADING, payload: loading }), []);
+  const setRequestStatus = useCallback(
+    (s: string) => dispatch({ type: MEDIA_AUTH.SET_REQUEST_STATUS, payload: s }),
+    [],
+  );
   const getPosts = useCallback((appId: string) => fetchPosts({ dispatch, appId }), []);
-  const updatePosts = useCallback((posts: Post[]) => dispatch({ type: MEDIA_ACTIONS.SET_POSTS, payload: posts }), []);
+  const updatePosts = useCallback((posts: Post[]) => dispatch({ type: MEDIA_AUTH.SET_POSTS, payload: posts }), []);
   const addPost = useCallback((post: CreatePost) => createPost({ dispatch, ...post }), []);
   const deletePost = useCallback((appId: string, postId: string) => removePost({ dispatch, postId, appId }), []);
 
   // user actions
   const postReply = useCallback((data: PostReply) => addReplyToPost({ dispatch, ...data, updateUser, updatePost }), []);
-  const postMessageReply = useCallback((data: PostReply) => addMessageReply({ dispatch, ...data, updateUser, updatePost }), []);
+  const postMessageReply = useCallback(
+    (data: PostReply) => addMessageReply({ dispatch, ...data, updateUser, updatePost }),
+    [],
+  );
   const updateLikePost = useCallback((postId: string) => toggleLikePost({ dispatch, postId, updateUser }), []);
-  const updateLikeMessage = useCallback((data: PostReply) => toggleLikeMsg({ dispatch, ...data, updateUser, updatePost }), []);
+  const updateLikeMessage = useCallback(
+    (data: PostReply) => toggleLikeMsg({ dispatch, ...data, updateUser, updatePost }),
+    [],
+  );
 
   const mediaValues = useMemo(() => {
     return {

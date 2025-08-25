@@ -1,4 +1,4 @@
-export enum MEDIA_ACTIONS {
+export enum MEDIA_AUTH {
   // boolean payloads
   IS_LOADING,
   SET_ERROR,

@@ -1,4 +1,4 @@
-export enum A_ACTIONS {
+export enum A_AUTH {
   // boolean payloads
   IS_LOADING,
   SET_STRANDED,
