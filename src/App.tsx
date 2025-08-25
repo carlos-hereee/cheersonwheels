@@ -1,4 +1,4 @@
-const Landing = () => {
+const App = () => {
   return (
     <div className="app-body">
       <h1 className="heading">Welcome to Cheerson Wheels</h1>
@@ -7,4 +7,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default App;

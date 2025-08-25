@@ -1,0 +1,42 @@
+{
+  "title": "Cheers on Wheels",
+  "tagline": "Your one-stop shop for all things Cheerson.",
+  "landing": {
+    "title": "Welcome to Cheers on Wheels",
+    "description": "Because Sip Happens and your guests deserve a Night they’ll never forget. The good times roll ”Your celebration on wheels",
+    "subtitle": "Your one-stop shop for all things cheer on.",
+    "image": "/img/landing-image.jpg",
+    "imageAlt": "Cheerson Wheels",
+    "body": {
+      "heading": "Experience the Ultimate Mobile Bar Service",
+      "details": "At Cheerson Wheels, we bring the party to you with our top-of-the-line mobile bar services. Whether you're hosting a wedding, corporate event, or private party, our fully equipped bar trailers and professional bartenders ensure your guests have an unforgettable experience. From classic cocktails to custom drink menus, we cater to your unique needs and preferences. Let us help you create memories that will last a lifetime with our exceptional service and attention to detail."
+    },
+    "sections": [
+      {
+        "title": "Our Services",
+        "description": "Explore our range of services designed to make your event unforgettable.",
+        "image": "/img/services.jpg",
+        "imageAlt": "Our Services"
+      },
+      {
+        "title": "About Us",
+        "description": "Learn more about our mission and the team behind Cheerson Wheels.",
+        "image": "/img/about-us.jpg",
+        "imageAlt": "About Us"
+      },
+      {
+        "title": "Contact Us",
+        "description": "Get in touch with us for bookings and inquiries.",
+        "image": "/img/contact-us.jpg",
+        "imageAlt": "Contact Us"
+      }
+    ],
+    "cta": {
+      "buttonText": "Book now!",
+      "details": "Contact us for more information",
+      "link": "/contact"
+    }
+  },
+  "keywords": ["Cheerson", "RC Vehicles"],
+  "author": "Cheerson Wheels Team"
+}
