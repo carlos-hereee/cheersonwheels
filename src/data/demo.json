@@ -1,6 +1,75 @@
 {
   "title": "Cheers on Wheels",
   "tagline": "Your one-stop shop for all things Cheerson.",
+  "homepageUrl": "https://cheersonwheels.com/",
+  "contactNumber1": "+1 (512) 284 6242",
+  "contactNumber2": "+1 (512) 555 1234",
+  "contactEmail1": "kelly@cheersonwheels.com",
+  "contactEmail2": "kelly@cheersonwheels.com",
+  "hoursOfOperation": {
+    "details": "Open by appointment only",
+    "monday": "24/7",
+    "tuesday": "24/7",
+    "wednesday": "24/7",
+    "thursday": "24/7",
+    "friday": "24/7",
+    "saturday": "24/7",
+    "sunday": "24/7"
+  },
+  "pricing": {
+    "title": "Our Pricing Plans",
+    "description": "Choose the perfect package for your event. We offer flexible pricing options to suit your needs and budget.",
+    "cta": {
+      "buttonText": "Book now!",
+      "link": "/booking"
+    },
+    "services": [
+      {
+        "title": "Basic Package",
+        "price": "$1100",
+        "features": [
+          "Standard Bar Setup",
+          "2 Bartenders",
+          "Up to 4 Hours of Service",
+          "Basic Drink Menu"
+        ]
+      },
+      {
+        "title": "Premium Package",
+        "price": "$1000",
+        "features": [
+          "Deluxe Bar Setup",
+          "3 Bartenders",
+          "Up to 6 Hours of Service",
+          "Custom Drink Menu",
+          "Premium Liquor Selection"
+        ]
+      },
+      {
+        "title": "VIP Package",
+        "price": "$2000",
+        "features": [
+          "Luxury Bar Setup",
+          "4 Bartenders",
+          "Up to 8 Hours of Service",
+          "Exclusive Drink Menu",
+          "Top-Shelf Liquor Selection",
+          "Personalized Service"
+        ]
+      }
+    ],
+    "addOns": {
+      "title": "+ Add-Ons",
+      "price": "Contact us for pricing",
+      "features": [
+        "Tailored Bar Setup",
+        "Flexible Bartender Count",
+        "Customizable Service Hours",
+        "Personalized Drink Menu",
+        "Special Requests Accommodated"
+      ]
+    }
+  },
   "landing": {
     "title": "Welcome to Cheers on Wheels",
     "description": "Because Sip Happens and your guests deserve a Night they’ll never forget. The good times roll ”Your celebration on wheels",
@@ -37,6 +106,66 @@
       "link": "/contact"
     }
   },
-  "keywords": ["Cheerson", "RC Vehicles"],
-  "author": "Cheerson Wheels Team"
+  "signatureDrinks": {
+    "title": "Signature Drinks",
+    "description": "Discover our unique and refreshing signature cocktails, crafted to perfection by our expert bartenders.",
+    "drinks": [
+      {
+        "name": "Blush & Bubbles",
+        "details": "A sparkling blend of rosé and champagne with a delicate floral twist, perfect for toasts and timeless moments.",
+        "ingredients": [],
+        "image": "/img/cheerson-mule.jpg",
+        "imageAlt": "Cheerson Mule"
+      },
+      {
+        "name": "Blush & Bubbles",
+        "details": "A sparkling blend of rosé and champagne with a delicate floral twist, perfect for toasts and timeless moments.",
+        "ingredients": [],
+        "image": "/img/cheerson-mule.jpg",
+        "imageAlt": "Cheerson Mule"
+      },
+      {
+        "name": "The Golden Hour",
+        "details": " Smooth bourbon kissed with honey and citrus, served over ice for a rich, sunset-worthy sip.",
+        "ingredients": [],
+        "image": "/img/cheerson-mule.jpg",
+        "imageAlt": "Cheerson Mule"
+      },
+      {
+        "name": "Berry Bliss Mojito ",
+        "details": "Fresh blueberries and mint muddled with a hint of lime, topped with crisp sparkling refreshment.",
+        "ingredients": [],
+        "image": "/img/cheerson-mule.jpg",
+        "imageAlt": "Cheerson Mule"
+      },
+      {
+        "name": "Sip Happens Sangria ",
+        "details": " A vibrant medley of seasonal fruits soaked in wine with a splash of citrus liqueur for a lively punch.",
+        "ingredients": [],
+        "image": "/img/cheerson-mule.jpg",
+        "imageAlt": "Cheerson Mule"
+      },
+      {
+        "name": "Prosecco & Pear ",
+        "details": "Light prosecco paired with juicy pear nectar and a touch of vanilla for a bubbly, elegant finish.",
+        "ingredients": [],
+        "image": "/img/cheerson-mule.jpg",
+        "imageAlt": "Cheerson Mule"
+      }
+    ]
+  },
+  "socials": {
+    "facebook": "https://www.facebook.com/cheersonwheels",
+    "instagram": "https://www.instagram.com/cheersonwheels",
+    "twitter": "https://twitter.com/cheersonwheels",
+    "linkedin": "https://www.linkedin.com/company/cheersonwheels"
+  },
+  "keywords": [
+    "mobile bar",
+    "event catering",
+    "bartending services",
+    "wedding bar",
+    "party bar"
+  ],
+  "author": "Cheers on Wheels Team"
 }
