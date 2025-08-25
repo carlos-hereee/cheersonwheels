@@ -3,11 +3,13 @@ import { createRoot } from 'react-dom/client';
 import { ScrollToTop } from 'nexious-library';
 import './stylesheets/index.css';
 import 'nexious-library/@index.css';
-import App from './pages/Landing.tsx';
+import App from './App.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <ScrollToTop />
-    <App />
+    <App>
+      <RoutesRouter />
+    </App>
   </BrowserRouter>,
 );

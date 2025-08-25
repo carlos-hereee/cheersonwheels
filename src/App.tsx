@@ -1,11 +1,12 @@
-import { Header } from 'nexious-library';
+import type { ChildProps } from 'app-types';
+import { Footer, Header } from 'nexious-library';
 
-const App = () => {
+const App = ({ children }: ChildProps) => {
   return (
     <div className="app-body">
       <Header />
-      {/* <h1 className="heading">Welcome to Cheerson Wheels</h1>
-      <p>Your one-stop shop for all things Cheerson.</p> */}
+      {children}
+      <Footer />
     </div>
   );
 };
