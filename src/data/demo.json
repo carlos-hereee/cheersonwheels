@@ -6,6 +6,46 @@
   "contactNumber2": "+1 (512) 555 1234",
   "contactEmail1": "kelly@cheersonwheels.com",
   "contactEmail2": "kelly@cheersonwheels.com",
+  "logo": {
+    "url": "https://img1.wsimg.com/isteam/ip/ecd04ae0-9c94-4062-8881-9dc8bcd0f031/cheers_on_wheels_card_front.png/:/rs=w:295,h:173,cg:true,m/cr=w:295,h:173/qt=q:95",
+    "alt": "Cheers on Wheels Logo",
+    "title": "Cheers on Wheels",
+    "theme": "rounded"
+  },
+  "menu": [
+    {
+      "uid": "about",
+      "menuId": "about",
+      "label": "about",
+      "value": "about",
+      "link": "about",
+      "name": "about"
+    },
+    {
+      "uid": "booking",
+      "menuId": "booking",
+      "label": "booking",
+      "value": "booking",
+      "link": "booking",
+      "name": "booking"
+    },
+    {
+      "uid": "pricing",
+      "menuId": "pricing",
+      "label": "pricing",
+      "value": "pricing",
+      "link": "pricing",
+      "name": "pricing"
+    },
+    {
+      "uid": "auth-1",
+      "menuId": "auth-1",
+      "label": "login",
+      "value": "login",
+      "link": "login",
+      "name": "login"
+    }
+  ],
   "hoursOfOperation": {
     "details": "Open by appointment only",
     "monday": "24/7",

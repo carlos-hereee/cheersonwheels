@@ -12,23 +12,13 @@
     "logout": "",
     "forgotPassword": ""
   },
-  "games": [
-    {
-      "name": "tictactoe",
-      "label": "TICTACTOE",
-      "isMultiplayer": false,
-      "map": [],
-      "dimensions": { "width": 3, "length": 3 }
-    }
-  ],
+
   "dashboardMenu": {
-    "apps": 0,
     "app": 0,
     "store": 0,
     "account": 0,
     "feed": 0,
-    "notifications": 0,
-    "orders": 0
+    "notifications": 0
   },
   "currencySymbols": {
     "usd": "$"

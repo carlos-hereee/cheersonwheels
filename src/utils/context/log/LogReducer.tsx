@@ -1,5 +1,5 @@
 import { A_LOG } from "@utils/actions/LogActions";
-import { LogActionProps, LogState } from "log-context";
+import type { LogActionProps, LogState } from "log-context";
 
 export const reducer = (state: LogState, action: LogActionProps): LogState => {
   switch (action.type) {
