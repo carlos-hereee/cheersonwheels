@@ -217,12 +217,28 @@
       }
     ]
   },
-  "socials": {
-    "facebook": "https://www.facebook.com/cheersonwheels",
-    "instagram": "https://www.instagram.com/cheersonwheels",
-    "twitter": "https://twitter.com/cheersonwheels",
-    "linkedin": "https://www.linkedin.com/company/cheersonwheels"
-  },
+  "socials": [
+    {
+      "media": "x",
+      "link": "https://twitter.com/carlos_heree",
+      "uid": "6554c3a2bb0a21f3bb3e07b5"
+    },
+    {
+      "uid": "instagram-uid",
+      "media": "instagram",
+      "link": "https://www.instagram.com/carlos_hereee/"
+    },
+    {
+      "uid": "linkedin-uid",
+      "media": "linkedin",
+      "link": "https://www.linkedin.com/in/carlos-hereee/"
+    },
+    {
+      "uid": "github-uid",
+      "media": "github",
+      "link": "https://github.com/carlos-hereee"
+    }
+  ],
   "keywords": ["mobile bar", "event catering", "bartending services", "wedding bar", "party bar"],
   "author": "Cheers on Wheels Team"
 }
