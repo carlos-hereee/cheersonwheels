@@ -18,6 +18,7 @@
       "menuId": "about",
       "label": "about",
       "value": "about",
+      "icon": "about",
       "link": "about",
       "name": "about"
     },
@@ -26,6 +27,7 @@
       "menuId": "booking",
       "label": "booking",
       "value": "booking",
+      "icon": "booking",
       "link": "booking",
       "name": "booking"
     },
@@ -34,6 +36,7 @@
       "menuId": "pricing",
       "label": "pricing",
       "value": "pricing",
+      "icon": "pricing",
       "link": "pricing",
       "name": "pricing"
     },
@@ -42,6 +45,7 @@
       "menuId": "auth-1",
       "label": "login",
       "value": "login",
+      "icon": "login",
       "link": "login",
       "name": "login"
     }
@@ -109,37 +113,61 @@
     "title": "Welcome to Cheers on Wheels",
     "description": "Because Sip Happens and your guests deserve a Night they’ll never forget. The good times roll ”Your celebration on wheels",
     "subtitle": "Your one-stop shop for all things cheer on.",
-    "image": "/img/landing-image.jpg",
-    "imageAlt": "Cheerson Wheels",
+    "hero": {
+      "url": "https://img1.wsimg.com/isteam/ip/ecd04ae0-9c94-4062-8881-9dc8bcd0f031/B32256B5-A93B-425F-9CCC-DED27E609B88.PNG/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:403,h:604",
+      "alt": "Cheerson Wheels"
+    },
     "body": {
       "heading": "Experience the Ultimate Mobile Bar Service",
       "details": "At Cheerson Wheels, we bring the party to you with our top-of-the-line mobile bar services. Whether you're hosting a wedding, corporate event, or private party, our fully equipped bar trailers and professional bartenders ensure your guests have an unforgettable experience. From classic cocktails to custom drink menus, we cater to your unique needs and preferences. Let us help you create memories that will last a lifetime with our exceptional service and attention to detail."
     },
     "sections": [
       {
+        "cta": [
+          {
+            "uid": "cta",
+            "label": "Services",
+            "link": "/booking"
+          }
+        ],
         "title": "Our Services",
-        "description": "Explore our range of services designed to make your event unforgettable.",
-        "image": "/img/services.jpg",
-        "imageAlt": "Our Services"
+        "uid": "Our Services",
+        "subtitle": "Explore our range of services designed to make your event unforgettable.",
+        "hero": {
+          "uid": "1",
+          "heroId": "1",
+          "url": "https://img1.wsimg.com/isteam/ip/ecd04ae0-9c94-4062-8881-9dc8bcd0f031/IMG_0530.jpeg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1160,h:974",
+          "theme": "hero-thumbnail",
+          "alt": "Our Services"
+        }
       },
       {
+        "uid": "About Us",
         "title": "About Us",
-        "description": "Learn more about our mission and the team behind Cheerson Wheels.",
-        "image": "/img/about-us.jpg",
-        "imageAlt": "About Us"
-      },
-      {
-        "title": "Contact Us",
-        "description": "Get in touch with us for bookings and inquiries.",
-        "image": "/img/contact-us.jpg",
-        "imageAlt": "Contact Us"
+        "cta": [
+          {
+            "uid": "cta",
+            "label": "Who are we?",
+            "link": "/about"
+          }
+        ],
+        "subtitle": "Learn more about our mission and the team behind Cheerson Wheels.",
+        "hero": {
+          "uid": "3",
+          "heroId": "3",
+          "url": "https://img1.wsimg.com/isteam/ip/ecd04ae0-9c94-4062-8881-9dc8bcd0f031/IMG_0717.jpeg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280,h:1707",
+          "theme": "hero-thumbnail rounded",
+          "alt": "About Us"
+        }
       }
     ],
-    "cta": {
-      "buttonText": "Book now!",
-      "details": "Contact us for more information",
-      "link": "/contact"
-    }
+    "cta": [
+      {
+        "uid": "cta",
+        "label": "Book now!",
+        "link": "/booking"
+      }
+    ]
   },
   "signatureDrinks": {
     "title": "Signature Drinks",
@@ -149,43 +177,43 @@
         "name": "Blush & Bubbles",
         "details": "A sparkling blend of rosé and champagne with a delicate floral twist, perfect for toasts and timeless moments.",
         "ingredients": [],
-        "image": "/img/cheerson-mule.jpg",
-        "imageAlt": "Cheerson Mule"
+        "url": "/img/cheerson-mule.jpg",
+        "alt": "Cheerson Mule"
       },
       {
         "name": "Blush & Bubbles",
         "details": "A sparkling blend of rosé and champagne with a delicate floral twist, perfect for toasts and timeless moments.",
         "ingredients": [],
-        "image": "/img/cheerson-mule.jpg",
-        "imageAlt": "Cheerson Mule"
+        "url": "/img/cheerson-mule.jpg",
+        "alt": "Cheerson Mule"
       },
       {
         "name": "The Golden Hour",
         "details": " Smooth bourbon kissed with honey and citrus, served over ice for a rich, sunset-worthy sip.",
         "ingredients": [],
-        "image": "/img/cheerson-mule.jpg",
-        "imageAlt": "Cheerson Mule"
+        "url": "/img/cheerson-mule.jpg",
+        "alt": "Cheerson Mule"
       },
       {
         "name": "Berry Bliss Mojito ",
         "details": "Fresh blueberries and mint muddled with a hint of lime, topped with crisp sparkling refreshment.",
         "ingredients": [],
-        "image": "/img/cheerson-mule.jpg",
-        "imageAlt": "Cheerson Mule"
+        "url": "/img/cheerson-mule.jpg",
+        "alt": "Cheerson Mule"
       },
       {
         "name": "Sip Happens Sangria ",
         "details": " A vibrant medley of seasonal fruits soaked in wine with a splash of citrus liqueur for a lively punch.",
         "ingredients": [],
-        "image": "/img/cheerson-mule.jpg",
-        "imageAlt": "Cheerson Mule"
+        "url": "/img/cheerson-mule.jpg",
+        "alt": "Cheerson Mule"
       },
       {
         "name": "Prosecco & Pear ",
         "details": "Light prosecco paired with juicy pear nectar and a touch of vanilla for a bubbly, elegant finish.",
         "ingredients": [],
-        "image": "/img/cheerson-mule.jpg",
-        "imageAlt": "Cheerson Mule"
+        "url": "/img/cheerson-mule.jpg",
+        "alt": "Cheerson Mule"
       }
     ]
   },

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 declare module "app-types" {
   export interface ChildProps {
     children: React.ReactNode;
@@ -283,10 +284,10 @@ declare module "app-types" {
   export type AppSettingDialogOptions = "pages" | "media" | "store" | "app" | "calendar";
   export interface SectionProps {
     title: string;
-    uid: string;
-    subtitle: string;
+    uid?: string;
+    subtitle?: string;
     details: string;
-    body: string;
+    body?: string;
     theme?: string;
     sharedKey?: string;
     heroId?: string;

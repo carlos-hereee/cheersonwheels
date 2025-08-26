@@ -1,7 +1,23 @@
-.logo {
+.rounded {
   border-radius: 100%;
 }
-
 .elbow-space {
   padding: 0 1rem;
+}
+.landing-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.hero-thumbnail {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.landing-sections .hero-card:nth-child(odd) .hero {
+  order: -10;
 }
