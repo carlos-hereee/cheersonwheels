@@ -20,3 +20,13 @@
   max-width: 450px;
   min-width: 250px;
 }
+.about-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 5rem;
+  object-fit: contain;
+  margin: auto;
+}
+.about-thumbnail img {
+  border-radius: 5rem;
+}

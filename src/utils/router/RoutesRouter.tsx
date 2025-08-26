@@ -7,6 +7,7 @@ import { AuthContext } from "@utils/context/auth/AuthInstance";
 import Services from "@pages/Services";
 import Contact from "@pages/Contact";
 import Booking from "@pages/Booking";
+import About from "@pages/About";
 
 const RoutesRouter = () => {
   const { accessToken } = useContext(AuthContext);
@@ -27,6 +28,7 @@ const RoutesRouter = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
         {/* <Route path="/checkout/success" element={<CheckoutSuccess />} /> */}
         {/* <Route path="/invite/success" element={<InvitationSuccess />} /> */}
         {/* <Route path="/checkout/error" element={<CheckoutSuccess />} /> */}
