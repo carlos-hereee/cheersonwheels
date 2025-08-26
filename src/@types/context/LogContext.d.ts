@@ -2,7 +2,7 @@
 declare module "log-context" {
   import { A_LOG } from "@utils/actions/LogActions";
 
-  export type APP_STATUS = "PRE-LAUNCH" | "IDLE" | "LOADING" | "ERROR" | "SUCCESS";
+  export type APP_STATUS = "PRE-LAUNCH" | "IDLE" | "LOADING" | "ERROR" | "SUCCESS" | string;
   export type PageType = "public" | "private" | "app";
 
   export interface LogMessage {

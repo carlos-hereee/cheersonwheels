@@ -1,5 +1,5 @@
 import { A_CHECKOUT } from "@utils/actions/CheckoutActions";
-import { CheckoutActionProps, CheckoutStateProps } from "checkout-context";
+import type { CheckoutActionProps, CheckoutStateProps } from "checkout-context";
 
 export const reducer = (state: CheckoutStateProps, action: CheckoutActionProps): CheckoutStateProps => {
   switch (action.type) {

@@ -1,14 +1,14 @@
-import { axiosAuth } from "@utils/axios/axiosAuth";
-import { axiosError } from "@utils/axios/axiosError";
-import type { AuthDispatchProps } from "auth-context";
+// import { axiosAuth } from "@utils/axios/axiosAuth";
+// import { axiosError } from "@utils/axios/axiosError";
+// import type { AuthDispatchProps } from "auth-context";
 
-export const setSubscribe = async ({ dispatch, appId, updateUser }: AuthDispatchProps) => {
-  // require key variable
-  if (!updateUser) throw Error("updateUser is required");
-  try {
-    const { data } = await axiosAuth.put(`/app/subscribe/${appId}`);
-    if (data) updateUser(data);
-  } catch (error) {
-    axiosError({ dispatch, type: "auth", error, target: "subscribe" });
-  }
-};
+// export const setSubscribe = async ({ dispatch, appId, updateUser }: AuthDispatchProps) => {
+//   // require key variable
+//   if (!updateUser) throw Error("updateUser is required");
+//   try {
+//     const { data } = await axiosAuth.put(`/app/subscribe/${appId}`);
+//     if (data) updateUser(data);
+//   } catch (error) {
+//     axiosError({ dispatch, type: "auth", error, target: "subscribe" });
+//   }
+// };

@@ -1,17 +1,17 @@
-import { axiosAuth } from "@utils/axios/axiosAuth";
-import { A_AUTH } from "@utils/actions/AuthActions";
-import type { AuthDispatchProps } from "auth-context";
-import { axiosError } from "@utils/axios/axiosError";
+// import { axiosAuth } from "@utils/axios/axiosAuth";
+// import { A_AUTH } from "@utils/actions/AuthActions";
+// import type { AuthDispatchProps } from "auth-context";
+// import { axiosError } from "@utils/axios/axiosError";
 
-export const singIn = async ({ login, dispatch }: AuthDispatchProps) => {
-  // require key variable
-  if (!login) throw Error("login is required");
-  try {
-    dispatch({ type: A_AUTH.IS_LOADING, payload: true });
-    const { data } = await axiosAuth.post("/auth/login", login);
-    dispatch({ type: A_AUTH.SET_ACCESS_TOKEN, payload: data });
-    dispatch({ type: A_AUTH.IS_LOADING, payload: false });
-  } catch (error) {
-    axiosError({ dispatch, error, type: "auth", target: "login" });
-  }
-};
+// export const singIn = async ({ login, dispatch }: AuthDispatchProps) => {
+//   // require key variable
+//   if (!login) throw Error("login is required");
+//   try {
+//     dispatch({ type: A_AUTH.IS_LOADING, payload: true });
+//     const { data } = await axiosAuth.post("/auth/login", login);
+//     dispatch({ type: A_AUTH.SET_ACCESS_TOKEN, payload: data });
+//     dispatch({ type: A_AUTH.IS_LOADING, payload: false });
+//   } catch (error) {
+//     axiosError({ dispatch, error, type: "auth", target: "login" });
+//   }
+// };

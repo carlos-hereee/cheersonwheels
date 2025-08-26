@@ -1,18 +1,18 @@
-import { isDev } from "@utils/config";
-import { A_MEDIA } from "@utils/actions/MediaActions";
-import type { MediaDispatchProps } from "media-context";
+// import { isDev } from "@utils/config";
+// import { A_MEDIA } from "@utils/actions/MediaActions";
+// import type { MediaDispatchProps } from "media-context";
 
-export const editPost = async ({ post, posts, dispatch }: MediaDispatchProps) => {
-  try {
-    // require key variable
-    if (!post) throw Error("post param is required");
-    if (!posts) throw Error("posts param is required");
-    const updatedPosts = posts.map((p) => {
-      if (p.postId === post.postId) return post;
-      return p;
-    });
-    dispatch({ type: A_MEDIA.SET_POSTS, payload: updatedPosts });
-  } catch (error) {
-    if (isDev) console.log("error", error);
-  }
-};
+// export const editPost = async ({ post, posts, dispatch }: MediaDispatchProps) => {
+//   try {
+//     // require key variable
+//     if (!post) throw Error("post param is required");
+//     if (!posts) throw Error("posts param is required");
+//     const updatedPosts = posts.map((p) => {
+//       if (p.postId === post.postId) return post;
+//       return p;
+//     });
+//     dispatch({ type: A_MEDIA.SET_POSTS, payload: updatedPosts });
+//   } catch (error) {
+//     if (isDev) console.log("error", error);
+//   }
+// };
