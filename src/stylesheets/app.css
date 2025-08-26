@@ -3,3 +3,20 @@
   color: var(--text-color);
   padding: 0 1rem;
 }
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.signature-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.services-grid .card {
+  max-width: 450px;
+  min-width: 250px;
+}

@@ -127,7 +127,7 @@
           {
             "uid": "cta",
             "label": "Services",
-            "link": "/booking"
+            "link": "/services"
           }
         ],
         "title": "Our Services",
@@ -174,43 +174,41 @@
     "description": "Discover our unique and refreshing signature cocktails, crafted to perfection by our expert bartenders.",
     "drinks": [
       {
-        "name": "Blush & Bubbles",
-        "details": "A sparkling blend of rosé and champagne with a delicate floral twist, perfect for toasts and timeless moments.",
+        "title": "Blush & Bubbles",
+        "hero": null,
+        "body": "A sparkling blend of rosé and champagne with a delicate floral twist, perfect for toasts and timeless moments.",
         "ingredients": [],
         "url": "/img/cheerson-mule.jpg",
         "alt": "Cheerson Mule"
       },
       {
-        "name": "Blush & Bubbles",
-        "details": "A sparkling blend of rosé and champagne with a delicate floral twist, perfect for toasts and timeless moments.",
+        "title": "The Golden Hour",
+        "hero": null,
+        "body": " Smooth bourbon kissed with honey and citrus, served over ice for a rich, sunset-worthy sip.",
         "ingredients": [],
         "url": "/img/cheerson-mule.jpg",
         "alt": "Cheerson Mule"
       },
       {
-        "name": "The Golden Hour",
-        "details": " Smooth bourbon kissed with honey and citrus, served over ice for a rich, sunset-worthy sip.",
+        "title": "Berry Bliss Mojito ",
+        "hero": null,
+        "body": "Fresh blueberries and mint muddled with a hint of lime, topped with crisp sparkling refreshment.",
         "ingredients": [],
         "url": "/img/cheerson-mule.jpg",
         "alt": "Cheerson Mule"
       },
       {
-        "name": "Berry Bliss Mojito ",
-        "details": "Fresh blueberries and mint muddled with a hint of lime, topped with crisp sparkling refreshment.",
+        "title": "Sip Happens Sangria ",
+        "hero": null,
+        "body": " A vibrant medley of seasonal fruits soaked in wine with a splash of citrus liqueur for a lively punch.",
         "ingredients": [],
         "url": "/img/cheerson-mule.jpg",
         "alt": "Cheerson Mule"
       },
       {
-        "name": "Sip Happens Sangria ",
-        "details": " A vibrant medley of seasonal fruits soaked in wine with a splash of citrus liqueur for a lively punch.",
-        "ingredients": [],
-        "url": "/img/cheerson-mule.jpg",
-        "alt": "Cheerson Mule"
-      },
-      {
-        "name": "Prosecco & Pear ",
-        "details": "Light prosecco paired with juicy pear nectar and a touch of vanilla for a bubbly, elegant finish.",
+        "title": "Prosecco & Pear ",
+        "hero": null,
+        "body": "Light prosecco paired with juicy pear nectar and a touch of vanilla for a bubbly, elegant finish.",
         "ingredients": [],
         "url": "/img/cheerson-mule.jpg",
         "alt": "Cheerson Mule"
