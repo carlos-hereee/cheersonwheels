@@ -12,7 +12,7 @@
     "pretty:fix": "eslint . --fix",
     "preview": "vite preview"
   },
-  "postinstall": "npx install nexious-library",
+  "postinstall": "npm install nexious-library",
   "dependencies": {
     "axios": "^1.11.0",
     "react": "^19.1.1",
