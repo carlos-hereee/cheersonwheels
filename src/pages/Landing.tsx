@@ -16,7 +16,7 @@ const Landing = () => {
       <div className="landing-sections">
         {landing.sections.map((data) =>
           data.hero ? (
-            <HeroCard data={data} hero={data.hero} onClick={(d: { link: string }) => navigate(d.link)} />
+            <HeroCard key={data.uid} data={data} hero={data.hero} onClick={(d: { link: string }) => navigate(d.link)} />
           ) : (
             <Card data={data} key={data.uid} />
           ),

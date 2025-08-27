@@ -2,10 +2,7 @@
   "title": "Cheers on Wheels",
   "tagline": "Your one-stop shop for all things Cheerson.",
   "homepageUrl": "https://cheersonwheels.com/",
-  "contactNumber1": "+1 (512) 284 6242",
-  "contactNumber2": "+1 (512) 555 1234",
-  "contactEmail1": "kelly@cheersonwheels.com",
-  "contactEmail2": "kelly@cheersonwheels.com",
+
   "logo": {
     "url": "https://img1.wsimg.com/isteam/ip/ecd04ae0-9c94-4062-8881-9dc8bcd0f031/cheers_on_wheels_card_front.png/:/rs=w:295,h:173,cg:true,m/cr=w:295,h:173/qt=q:95",
     "alt": "Cheers on Wheels Logo",
@@ -18,7 +15,6 @@
       "menuId": "about",
       "label": "about",
       "value": "about",
-      "icon": "about",
       "link": "about",
       "name": "about"
     },
@@ -27,7 +23,6 @@
       "menuId": "booking",
       "label": "booking",
       "value": "booking",
-      "icon": "booking",
       "link": "booking",
       "name": "booking"
     },
@@ -36,29 +31,52 @@
       "menuId": "pricing",
       "label": "pricing",
       "value": "pricing",
-      "icon": "pricing",
       "link": "pricing",
       "name": "pricing"
-    },
-    {
-      "uid": "auth-1",
-      "menuId": "auth-1",
-      "label": "login",
-      "value": "login",
-      "icon": "login",
-      "link": "login",
-      "name": "login"
     }
   ],
   "hoursOfOperation": {
-    "details": "Open by appointment only",
-    "monday": "24/7",
-    "tuesday": "24/7",
-    "wednesday": "24/7",
-    "thursday": "24/7",
-    "friday": "24/7",
-    "saturday": "24/7",
-    "sunday": "24/7"
+    "header": {
+      "title": "Hours of Operation",
+      "subtitle": "We are available to serve you 24/7 for all your event needs."
+    },
+    "days": [
+      {
+        "value": "monday",
+        "uid": "monday",
+        "details": "Open by appointment only"
+      },
+      {
+        "value": "tuesday",
+        "uid": "tuesday",
+        "details": "Open by appointment only"
+      },
+      {
+        "value": "wednesday",
+        "uid": "wednesday",
+        "details": "Open by appointment only"
+      },
+      {
+        "value": "thursday",
+        "uid": "thursday",
+        "details": "Open by appointment only"
+      },
+      {
+        "value": "friday",
+        "uid": "friday",
+        "details": "Open by appointment only"
+      },
+      {
+        "value": "saturday",
+        "uid": "saturday",
+        "details": "Open by appointment only"
+      },
+      {
+        "value": "sunday",
+        "uid": "sunday",
+        "details": "Open by appointment only"
+      }
+    ]
   },
   "pricing": {
     "title": "Our Pricing Plans",
@@ -237,6 +255,14 @@
       "link": "https://github.com/carlos-hereee"
     }
   ],
+  "contactUs": {
+    "title": "Get in Touch",
+    "description": "Have questions or want to book our services? Reach out to us, and we'll be happy to assist you!",
+    "contactNumber1": "+1 (512) 284 6242",
+    "contactNumber2": "+1 (512) 555 1234",
+    "contactEmail1": "kelly@cheersonwheels.com",
+    "contactEmail2": "kelly@cheersonwheels.com"
+  },
   "keywords": ["mobile bar", "event catering", "bartending services", "wedding bar", "party bar"],
   "author": "Cheers on Wheels Team"
 }

@@ -1,0 +1,36 @@
+{
+  "menu": [
+    {
+      "uid": "about",
+      "menuId": "about",
+      "label": "about",
+      "value": "about",
+      "link": "about",
+      "name": "about"
+    },
+    {
+      "uid": "booking",
+      "menuId": "booking",
+      "label": "booking",
+      "value": "booking",
+      "link": "booking",
+      "name": "booking"
+    },
+    {
+      "uid": "pricing",
+      "menuId": "pricing",
+      "label": "pricing",
+      "value": "pricing",
+      "link": "pricing",
+      "name": "pricing"
+    },
+    {
+      "uid": "auth-1",
+      "menuId": "auth-1",
+      "label": "login",
+      "value": "login",
+      "link": "login",
+      "name": "login"
+    }
+  ]
+}

@@ -1,14 +1,17 @@
 import type { ChildProps } from "app-types";
 import { Footer, Header } from "nexious-library";
-import { logo, title } from "@data/demo.json";
+import { logo, title, socials, menu, hoursOfOperation } from "@data/demo.json";
+import { useNavigate } from "react-router-dom";
 
 const App = ({ children }: ChildProps) => {
+  const navigate = useNavigate();
+  const handleMenu = (menuItem: { link: string }) => navigate(menuItem.link);
   return (
     <div className="app-body">
-      <Header logo={logo} />
+      <Header logo={logo} onLogoCLick={() => navigate("/")} menu={menu} hideIcons updateMenu={handleMenu} />
       {children}
-      {/* <Footer title={title} media={{ medias: socials }} /> */}
-      <Footer title={title} />
+
+      <Footer appName={title} media={{ medias: socials }} hoursOfOperation={hoursOfOperation} />
     </div>
   );
 };
