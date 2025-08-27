@@ -190,6 +190,11 @@
   "signatureDrinks": {
     "title": "Signature Drinks",
     "description": "Discover our unique and refreshing signature cocktails, crafted to perfection by our expert bartenders.",
+    "hero": {
+      "url": "https://img1.wsimg.com/isteam/ip/ecd04ae0-9c94-4062-8881-9dc8bcd0f031/IMG_0530.jpeg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1160,h:974",
+      "alt": "Cheerson Signature Drinks",
+      "theme": "signature-thumbnail"
+    },
     "drinks": [
       {
         "title": "Blush & Bubbles",
@@ -233,28 +238,33 @@
       }
     ]
   },
-  "socials": [
-    {
-      "media": "x",
-      "link": "https://twitter.com/carlos_heree",
-      "uid": "6554c3a2bb0a21f3bb3e07b5"
-    },
-    {
-      "uid": "instagram-uid",
-      "media": "instagram",
-      "link": "https://www.instagram.com/carlos_hereee/"
-    },
-    {
-      "uid": "linkedin-uid",
-      "media": "linkedin",
-      "link": "https://www.linkedin.com/in/carlos-hereee/"
-    },
-    {
-      "uid": "github-uid",
-      "media": "github",
-      "link": "https://github.com/carlos-hereee"
-    }
-  ],
+
+  "socials": {
+    "title": "Dont miss out on the latest updates and special offers from Cheers on Wheels. Follow us on social media.",
+    "subtile": "Stay connected with our vibrant community of event enthusiasts.",
+    "medias": [
+      {
+        "media": "x",
+        "link": "https://twitter.com/carlos_heree",
+        "uid": "6554c3a2bb0a21f3bb3e07b5"
+      },
+      {
+        "uid": "instagram-uid",
+        "media": "instagram",
+        "link": "https://www.instagram.com/carlos_hereee/"
+      },
+      {
+        "uid": "linkedin-uid",
+        "media": "linkedin",
+        "link": "https://www.linkedin.com/in/carlos-hereee/"
+      },
+      {
+        "uid": "github-uid",
+        "media": "github",
+        "link": "https://github.com/carlos-hereee"
+      }
+    ]
+  },
   "contactUs": {
     "title": "Get in Touch",
     "description": "Have questions or want to book our services? Reach out to us, and we'll be happy to assist you!",

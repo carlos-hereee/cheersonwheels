@@ -10,8 +10,7 @@ const App = ({ children }: ChildProps) => {
     <div className="app-body">
       <Header logo={logo} onLogoCLick={() => navigate("/")} menu={menu} hideIcons updateMenu={handleMenu} />
       {children}
-
-      <Footer appName={title} media={{ medias: socials }} hoursOfOperation={hoursOfOperation} />
+      <Footer appName={title} media={socials} hoursOfOperation={hoursOfOperation} />
     </div>
   );
 };
