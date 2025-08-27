@@ -1,0 +1,70 @@
+{
+  "calendarEvents": [
+    {
+      "date": "2025-08-20",
+      "uid": "2025-08-20",
+      "eventId": "2025-08-20",
+      "title": "John and Jane's Wedding",
+      "name": "John and Jane's Wedding",
+      "details": "John and Jane's Wedding",
+      "isOpen": true,
+      "attendees": [],
+      "description": "A beautiful outdoor wedding ceremony followed by a reception.",
+      "startTime": "15:00",
+      "endTime": "23:00"
+    },
+    {
+      "date": "2025-08-22",
+      "uid": "2025-08-22",
+      "eventId": "2025-08-22",
+      "title": "Corporate Gala",
+      "name": "Corporate Gala",
+      "details": "Corporate Gala",
+      "isOpen": true,
+      "attendees": [],
+      "description": "An elegant evening event for our corporate clients.",
+      "startTime": "15:00",
+      "endTime": "23:00"
+    },
+    {
+      "date": "2025-08-25",
+      "uid": "2025-08-25",
+      "eventId": "2025-08-25",
+      "title": "Birthday Bash",
+      "name": "Birthday Bash",
+      "details": "Birthday Bash",
+      "isOpen": true,
+      "attendees": [],
+      "description": "A fun-filled birthday party with friends and family.",
+      "startTime": "15:00",
+      "endTime": "23:00"
+    },
+    {
+      "date": "2025-08-28",
+      "uid": "2025-08-28",
+      "eventId": "2025-08-28",
+      "title": "Anniversary Celebration",
+      "name": "Anniversary Celebration",
+      "details": "Anniversary Celebration",
+      "isOpen": true,
+      "attendees": [],
+      "description": "Celebrating 25 years of love and commitment.",
+      "startTime": "15:00",
+      "endTime": "23:00"
+    },
+    {
+      "date": "2025-08-28",
+      "uid": "2025-28",
+      "eventId": "2025-08-28",
+      "title": "Anniversary Celebration",
+      "name": "Anniversary Celebration",
+      "details": "Anniversary Celebration",
+      "isOpen": true,
+      "attendees": [],
+      "description": "Celebrating 25 years of love and commitment.",
+      "startTime": "15:00",
+      "endTime": "23:00"
+    }
+  ],
+  "booked": []
+}

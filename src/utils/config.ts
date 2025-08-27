@@ -1,4 +1,4 @@
-import { homepageUrl } from "@data/demo.json";
+import { homepageUrl } from "@data/demo/demo.json";
 
 export const devMode = import.meta.env.VITE_NODE_ENV;
 export const isDev = devMode === "development" || devMode === "dev";

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 declare module "app-calendar" {
   import { CalendarProps } from "app-types";
   import { A_CALENDAR } from "@utils/actions/CalendarAction";
@@ -16,6 +17,7 @@ declare module "app-calendar" {
     start: number;
     day: number;
     yyyyddmm: string;
+    yyyymmdd?: string;
     ping?: number;
   };
   export interface EventAttendees {
@@ -37,8 +39,8 @@ declare module "app-calendar" {
     date: string;
     name: string;
     details: string;
-    startTime: string;
     createdAt?: string;
+    startTime: string;
     endTime: string;
     isOpen: boolean;
     attendees: EventAttendees[];

@@ -1,37 +1,39 @@
-import { Calendar } from "nexious-library";
-// import CalendarEvents from "@components/app/CalendarEvents";
-// import { useContext, useEffect } from "react";
-// import { CalendarContext } from "@context/calendar/CalendarContext";
-// import { AppContext } from "@context/app/AppContext";
-// import { CalendarDayProp, CalEvent } from "app-calendar";
+import type { CalEvent, IEvent } from "app-calendar";
+import { Calendar, CalendarEvents } from "nexious-library";
+import { calendarEvents } from "@data/demo/calendar.json";
+import { useEffect, useState } from "react";
 
 const AppBooking = () => {
-  //   const { name, events, getCalendar, updateSelectedDay } = useContext(CalendarContext);
-  //   const { appId } = useContext(AppContext);
-  //   const requireEvents = events.some((e) => typeof e === "string");
+  const [selectedDay, setSelectedDay] = useState<CalEvent | null>(null);
+  const [calEvent, setEvent] = useState<IEvent[] | null>(null);
+  const [active, setActive] = useState<IEvent | null>(null);
 
-  //   useEffect(() => {
-  //     if (events) {
-  //       if (requireEvents) getCalendar({ appId });
-  //     }
-  //   }, [events]);
+  useEffect(() => {
+    if (selectedDay) {
+      setActive(null);
+      setEvent(selectedDay.list);
+    } else setEvent(null);
+  }, [selectedDay]);
 
-  //   const handleDayClick = (e: CalEvent | CalendarDayProp) => {
-  //     if ((e as CalEvent).list) updateSelectedDay(e as CalEvent);
-  //     else updateSelectedDay({ date: e.date, list: [] });
-  //   };
-  //   if (requireEvents || !events) return <Loading />;
   return (
-    <section className="primary-container">
-      {/* {name && <h1 className="heading">{name}</h1>} */}
+    <section className="split-container">
       <Calendar
+        title="Book with us"
         value={new Date()}
-        // onDayClick={handleDayClick}
-        // minDate={new Date()}
-        // // minDetail="month"
-        // events={events}
+        onDayClick={(e: CalEvent) => setSelectedDay(e)}
+        minDate={new Date()}
+        minDetail="month"
+        events={calendarEvents}
       />
-      {/* <CalendarEvents /> */}
+      <CalendarEvents
+        data={{
+          events: calEvent,
+          header: { title: selectedDay ? `Events on ${selectedDay.date}` : "Select a date" },
+        }}
+        selectedDay={selectedDay}
+        onEventClick={(e: IEvent) => setActive(e)}
+        event={active}
+      />
     </section>
   );
 };
