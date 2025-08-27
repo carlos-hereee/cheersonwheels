@@ -1,5 +1,5 @@
 import { signatureDrinks } from "@data/demo/demo.json";
-import { Button, Card, Hero, HeroCard } from "nexious-library";
+import { HeroCard, SectionList } from "nexious-library";
 import { useNavigate } from "react-router-dom";
 
 const Services = () => {
@@ -7,9 +7,16 @@ const Services = () => {
 
   return (
     <div className="container">
-      <h1 className="heading">{signatureDrinks.title}</h1>
-      <p className="w-full">{signatureDrinks.description}</p>
-      <div className="services-grid">
+      <div className="container">
+        <HeroCard
+          data={signatureDrinks}
+          hero={signatureDrinks.hero}
+          onClick={(data: { link: string }) => navigate(data.link)}
+        />
+      </div>
+      <SectionList sections={signatureDrinks.drinks} />
+
+      {/* <div className="services-grid">
         {signatureDrinks.drinks.map((drink) =>
           drink.hero ? (
             <HeroCard data={drink} hero={drink.hero} onClick={(d: { link: string }) => navigate(d.link)} />
@@ -21,7 +28,7 @@ const Services = () => {
             </div>
           ),
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
