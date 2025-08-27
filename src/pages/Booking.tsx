@@ -1,18 +1,19 @@
+"use client";
 import type { CalEvent, IEvent } from "app-calendar";
 import { Calendar, CalendarEvents } from "nexious-library";
 import { calendarEvents } from "@data/demo/calendar.json";
 import { useEffect, useState } from "react";
 
 const AppBooking = () => {
-  const [selectedDay, setSelectedDay] = useState<CalEvent | null>();
-  const [calEvent, setEvent] = useState<IEvent[] | null>();
-  const [active, setActive] = useState<IEvent | null>();
+  const [selectedDay, setSelectedDay] = useState<CalEvent>();
+  const [calEvent, setEvent] = useState<IEvent[]>();
+  const [active, setActive] = useState<IEvent>();
 
   useEffect(() => {
-    if (selectedDay) {
-      setActive(null);
+    if (selectedDay && selectedDay.date) {
+      setActive(undefined);
       setEvent(selectedDay.list);
-    } else setEvent(null);
+    } else setEvent(undefined);
   }, [selectedDay]);
 
   return (
