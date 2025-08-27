@@ -1,5 +1,5 @@
 import { Card, HeroCard } from "nexious-library";
-import { landing } from "@data/demo.json";
+import { landing } from "@data/demo/demo.json";
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {

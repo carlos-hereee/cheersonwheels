@@ -1,4 +1,4 @@
-import { signatureDrinks } from "@data/demo.json";
+import { signatureDrinks } from "@data/demo/demo.json";
 import { Button, Card, Hero, HeroCard } from "nexious-library";
 import { useNavigate } from "react-router-dom";
 

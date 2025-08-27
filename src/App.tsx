@@ -1,6 +1,6 @@
 import type { ChildProps } from "app-types";
 import { Footer, Header } from "nexious-library";
-import { logo, title, socials, menu, hoursOfOperation } from "@data/demo.json";
+import { logo, title, socials, menu, hoursOfOperation } from "@data/demo/demo.json";
 import { useNavigate } from "react-router-dom";
 
 const App = ({ children }: ChildProps) => {
