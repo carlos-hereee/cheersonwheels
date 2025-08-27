@@ -1,4 +1,4 @@
-import { Card, HeroCard } from "nexious-library";
+import { HeroCard, SectionList } from "nexious-library";
 import { landing } from "@data/demo/demo.json";
 import { useNavigate } from "react-router-dom";
 
@@ -13,15 +13,7 @@ const Landing = () => {
         <HeroCard data={landing} hero={landing.hero} onClick={handleClick} />
         {landing.body && <p className="text-max">{landing.body.details}</p>}
       </div>
-      <div className="landing-sections">
-        {landing.sections.map((data) =>
-          data.hero ? (
-            <HeroCard key={data.uid} data={data} hero={data.hero} onClick={(d: { link: string }) => navigate(d.link)} />
-          ) : (
-            <Card data={data} key={data.uid} />
-          ),
-        )}
-      </div>
+      <SectionList sections={landing.sections} theme="page-sections" />
     </div>
   );
 };
