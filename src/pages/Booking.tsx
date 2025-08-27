@@ -4,9 +4,9 @@ import { calendarEvents } from "@data/demo/calendar.json";
 import { useEffect, useState } from "react";
 
 const AppBooking = () => {
-  const [selectedDay, setSelectedDay] = useState<CalEvent | null>(null);
-  const [calEvent, setEvent] = useState<IEvent[] | null>(null);
-  const [active, setActive] = useState<IEvent | null>(null);
+  const [selectedDay, setSelectedDay] = useState<CalEvent | null>();
+  const [calEvent, setEvent] = useState<IEvent[] | null>();
+  const [active, setActive] = useState<IEvent | null>();
 
   useEffect(() => {
     if (selectedDay) {
