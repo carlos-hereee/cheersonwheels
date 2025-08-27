@@ -4,13 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "watch": "tsc -w",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "pretty:fix": "eslint . --fix",
-    "postinstall": "npm install nexious-library",
+    "start": "vite",
+    "link": "npm link nexious-library",
+    "postinstall": "npm i nexious-library",
+    "watch": "tsc -p tsconfig.json -w",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
