@@ -1,5 +1,5 @@
 import { A_ADMIN } from "@utils/actions/AdminActions";
-import { AdminDisptachProps } from "app-admin";
+import type { AdminDisptachProps } from "app-admin";
 
 export const updateFormStatus = async ({ dispatch, status }: AdminDisptachProps) => {
   // require key variable

@@ -1,6 +1,6 @@
 import { axiosMedia } from "@utils/axios/axiosMedia";
 import { A_ADMIN } from "@utils/actions/AdminActions";
-import { AdminDisptachProps } from "app-admin";
+import type { AdminDisptachProps } from "app-admin";
 import { axiosError } from "@utils/axios/axiosError";
 
 export const updateAppDetails = async ({ dispatch, values, appId, handleAppAssets }: AdminDisptachProps) => {

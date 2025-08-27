@@ -1,6 +1,6 @@
 import { axiosAuth } from "@utils/axios/axiosAuth";
 import { axiosError } from "@utils/axios/axiosError";
-import { AdminDisptachProps } from "app-admin";
+import type { AdminDisptachProps } from "app-admin";
 
 export const fetchAccessToken = async ({ handleAppAssets, dispatch }: AdminDisptachProps) => {
   // require key variable

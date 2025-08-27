@@ -1,6 +1,6 @@
 import { A_ADMIN } from "@utils/actions/AdminActions";
 import { axiosAuth } from "@utils/axios/axiosAuth";
-import { AdminDisptachProps } from "app-admin";
+import type { AdminDisptachProps } from "app-admin";
 
 export const updateOrder = async ({ dispatch, option, appId, from, order, handleAppAssets }: AdminDisptachProps) => {
   // require key variable

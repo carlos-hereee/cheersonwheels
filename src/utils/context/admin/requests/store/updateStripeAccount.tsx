@@ -1,5 +1,5 @@
 import { axiosAuth } from "@utils/axios/axiosAuth";
-import { AdminDisptachProps } from "app-admin";
+import type { AdminDisptachProps } from "app-admin";
 
 export const updateStripeAccount = async (props: AdminDisptachProps) => {
   const { accountId, updateStripeConfig, config } = props;

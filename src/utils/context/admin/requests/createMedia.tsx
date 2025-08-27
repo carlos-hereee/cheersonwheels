@@ -1,6 +1,6 @@
 import { A_ADMIN } from "@utils/actions/AdminActions";
 import { axiosAuth } from "@utils/axios/axiosAuth";
-import { AdminDisptachProps } from "app-admin";
+import type { AdminDisptachProps } from "app-admin";
 
 export const createMedia = async (props: AdminDisptachProps) => {
   const { appId, dispatch, handleAppAssets, values } = props;

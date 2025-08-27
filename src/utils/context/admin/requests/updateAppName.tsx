@@ -1,17 +1,17 @@
-import { axiosMedia } from "@utils/axios/axiosMedia";
-import { A_ADMIN } from "@utils/actions/AdminActions";
-import { AdminDisptachProps } from "app-admin";
+// import { axiosMedia } from "@utils/axios/axiosMedia";
+// import { A_ADMIN } from "@utils/actions/AdminActions";
+// import type { AdminDisptachProps } from "app-admin";
 
-export const updateAppName = async (props: AdminDisptachProps) => {
-  const { dispatch, values, appId, handleAppAssets } = props;
-  try {
-    dispatch({ type: A_ADMIN.IS_LOADING, payload: true });
-    const { data } = await axiosMedia.post(`/app/update-app-name/${appId}`, values);
-    if (data && handleAppAssets) handleAppAssets(data);
-    dispatch({ type: A_ADMIN.IS_LOADING, payload: false });
-  } catch (error) {
-    // isDev && console.log("error building app ", error);
-    // dispatch({ type: "SET_APP_ID", payload: "" });
-    // dispatch({ type: "IS_LOADING", payload: false });
-  }
-};
+// export const updateAppName = async (props: AdminDisptachProps) => {
+//   const { dispatch, values, appId, handleAppAssets } = props;
+//   try {
+//     dispatch({ type: A_ADMIN.IS_LOADING, payload: true });
+//     const { data } = await axiosMedia.post(`/app/update-app-name/${appId}`, values);
+//     if (data && handleAppAssets) handleAppAssets(data);
+//     dispatch({ type: A_ADMIN.IS_LOADING, payload: false });
+//   } catch (error) {
+//     // isDev && console.log("error building app ", error);
+//     // dispatch({ type: "SET_APP_ID", payload: "" });
+//     // dispatch({ type: "IS_LOADING", payload: false });
+//   }
+// };

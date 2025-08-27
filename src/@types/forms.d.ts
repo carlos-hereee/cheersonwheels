@@ -1,6 +1,6 @@
 declare module "app-forms" {
   import { ISubscription, NSettings, UserSchema } from "auth-context";
-  import { MerchProps } from "store-context";
+  import type { MerchProps } from "store-context";
   import { AppListProps } from "app-context";
   import {
     AssetProps,

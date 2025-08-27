@@ -1,7 +1,7 @@
 import { A_ADMIN } from "@utils/actions/AdminActions";
 import { axiosError } from "@utils/axios/axiosError";
 import { axiosMedia } from "@utils/axios/axiosMedia";
-import { AdminDisptachProps } from "app-admin";
+import type { AdminDisptachProps } from "app-admin";
 
 export const buildApp = async ({ dispatch, handleAppAssets, values }: AdminDisptachProps) => {
   // require key variable

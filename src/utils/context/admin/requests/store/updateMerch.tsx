@@ -2,8 +2,8 @@ import { A_ADMIN } from "@utils/actions/AdminActions";
 import { axiosAuth } from "@utils/axios/axiosAuth";
 import { axiosError } from "@utils/axios/axiosError";
 import { axiosMedia } from "@utils/axios/axiosMedia";
-import { AdminDisptachProps } from "app-admin";
-import { MerchProps } from "store-context";
+import type { AdminDisptachProps } from "app-admin";
+import type { MerchProps } from "store-context";
 
 export const updateMerch = async ({ dispatch, handleAppAssets, values, appId, merchId }: AdminDisptachProps) => {
   // require key variable

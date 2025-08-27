@@ -1,6 +1,6 @@
 import { axiosAuth } from "@utils/axios/axiosAuth";
 import { A_ADMIN } from "@utils/actions/AdminActions";
-import { AdminDisptachProps } from "app-admin";
+import type { AdminDisptachProps } from "app-admin";
 
 export const updateMenuItem = async ({ appId, dispatch, handleAppAssets, uid, values }: AdminDisptachProps) => {
   // require key variable

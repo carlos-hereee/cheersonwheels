@@ -4,7 +4,7 @@ declare module "app-context" {
   import { Boards } from "task-board-context";
   import { Post } from "media-context";
   import { IEvent } from "app-calendar";
-  import { MerchProps } from "store-context";
+  import type { MerchProps } from "store-context";
   import { ISubscription, UserSchema } from "auth-context";
   import { AppAssets, FORM_STATUS } from "app-admin";
   import {

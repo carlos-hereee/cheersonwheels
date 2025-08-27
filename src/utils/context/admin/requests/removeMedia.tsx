@@ -1,6 +1,6 @@
 import { axiosAuth } from "@utils/axios/axiosAuth";
 import { A_ADMIN } from "@utils/actions/AdminActions";
-import { AdminDisptachProps } from "app-admin";
+import type { AdminDisptachProps } from "app-admin";
 
 export const removeMedia = async ({ appId, dispatch, handleAppAssets, name }: AdminDisptachProps) => {
   // require key variable

@@ -1,5 +1,5 @@
 import { A_ADMIN } from "@utils/actions/AdminActions";
-import { AdminActionProps, AdminStateProps } from "app-admin";
+import type { AdminActionProps, AdminStateProps } from "app-admin";
 
 export const reducer = (state: AdminStateProps, action: AdminActionProps): AdminStateProps => {
   switch (action.type) {

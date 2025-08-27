@@ -1,7 +1,7 @@
 import { A_ADMIN } from "@utils/actions/AdminActions";
 import { axiosAuth } from "@utils/axios/axiosAuth";
 import { axiosError } from "@utils/axios/axiosError";
-import { AdminDisptachProps } from "app-admin";
+import type { AdminDisptachProps } from "app-admin";
 
 export const removeMerch = async ({ dispatch, handleAppAssets, appId, merchId }: AdminDisptachProps) => {
   // require key variable
