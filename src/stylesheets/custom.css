@@ -18,8 +18,9 @@
   object-fit: cover;
 }
 
-.page-sections .hero-card:nth-child(odd) .hero {
+.page-sections .page-section-card-wrapper:nth-child(odd) .hero {
   order: -10;
+  margin: auto;
 }
 .page-sections .hero-card * {
   display: flex;

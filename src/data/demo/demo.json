@@ -148,7 +148,7 @@
             "link": "/services"
           }
         ],
-        "theme": "",
+        "theme": "page-section-card",
         "title": "Our Services",
         "uid": "Our Services",
         "subtitle": "Explore our range of services designed to make your event unforgettable.",
@@ -162,7 +162,7 @@
       },
       {
         "uid": "About Us",
-        "theme": "",
+        "theme": "page-section-card",
         "title": "About Us",
         "cta": [
           {

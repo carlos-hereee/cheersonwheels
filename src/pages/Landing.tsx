@@ -13,7 +13,11 @@ const Landing = () => {
         <HeroCard data={landing} hero={landing.hero} onClick={handleClick} />
         {landing.body && <p className="text-max">{landing.body.details}</p>}
       </div>
-      <SectionList sections={landing.sections} theme="page-sections" />
+      <SectionList
+        sections={landing.sections}
+        theme="page-sections"
+        handleClick={(d: { link: string }) => navigate(d.link)}
+      />
     </div>
   );
 };
