@@ -1,42 +1,42 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { PageNotFound } from "nexious-library";
-import PublicRoute from "./PublicRoute";
+// import PublicRoute from "./PublicRoute";
 import Landing from "@pages/Landing";
-import { AuthContext } from "@utils/context/auth/AuthInstance";
+// import { AuthContext } from "@utils/context/auth/AuthInstance";
 import Services from "@pages/Services";
 import Contact from "@pages/Contact";
 import Booking from "@pages/Booking";
 import About from "@pages/About";
 
 const RoutesRouter = () => {
-  const { accessToken } = useContext(AuthContext);
+  // const { accessToken } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const navigateClick = () => navigate(accessToken ? "/dashboard" : "/");
+  const navigateClick = () => navigate("/");
   return (
     <Routes>
       {/* Public Routes */}
-      <Route element={<PublicRoute />}>
-        {/* // if server not coaperating use offline data */}
-        {/* <Route path="/forgot-password" element={<ForgotPassword />} /> */}
-        {/* <Route path="/reset-password" element={<ResetPassword />} /> */}
-        {/* <Route path="/sign-up" element={<SignUp />} /> */}
-        {/* <Route path="/login" element={<Login />} /> */}
-        {/* <Route path="/logout" element={<Logout />} /> */}
-        {/* <Route path="/checkout" element={<Checkout />} /> */}
-        <Route path="/services" element={<Services />} />
-        <Route path="/pricing" element={<Services />} />
-        <Route path="/booking" element={<Booking />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        {/* <Route path="/checkout/success" element={<CheckoutSuccess />} /> */}
-        {/* <Route path="/invite/success" element={<InvitationSuccess />} /> */}
-        {/* <Route path="/checkout/error" element={<CheckoutSuccess />} /> */}
-        {/* <Route path="/feed" element={<ViewPostFeed />} /> */}
-        {/* <Route path="/feed/post" element={<CreatePostFeed />} /> */}
-        <Route path="/" element={<Landing />} />
-      </Route>
+      {/* <Route element={<PublicRoute />}> */}
+      {/* // if server not coaperating use offline data */}
+      {/* <Route path="/forgot-password" element={<ForgotPassword />} /> */}
+      {/* <Route path="/reset-password" element={<ResetPassword />} /> */}
+      {/* <Route path="/sign-up" element={<SignUp />} /> */}
+      {/* <Route path="/login" element={<Login />} /> */}
+      {/* <Route path="/logout" element={<Logout />} /> */}
+      {/* <Route path="/checkout" element={<Checkout />} /> */}
+      <Route path="/services" element={<Services />} />
+      <Route path="/pricing" element={<Services />} />
+      <Route path="/booking" element={<Booking />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/about" element={<About />} />
+      {/* <Route path="/checkout/success" element={<CheckoutSuccess />} /> */}
+      {/* <Route path="/invite/success" element={<InvitationSuccess />} /> */}
+      {/* <Route path="/checkout/error" element={<CheckoutSuccess />} /> */}
+      {/* <Route path="/feed" element={<ViewPostFeed />} /> */}
+      {/* <Route path="/feed/post" element={<CreatePostFeed />} /> */}
+      <Route path="/" element={<Landing />} />
+      {/* </Route> */}
 
       {/* Private routes for account holders and authorized user */}
       {/* <Route element={<PrivateRoute />}>
@@ -61,7 +61,8 @@ const RoutesRouter = () => {
         <Route path="/settings/:appName" element={<AppSettings />} />
       </Route> */}
       {/* All other routes */}
-      <Route path="/*" element={<PageNotFound to={accessToken ? "dashboard" : "home"} handleClick={navigateClick} />} />
+      {/* <Route path="/*" element={<PageNotFound to={accessToken ? "dashboard" : "home"} handleClick={navigateClick} />} /> */}
+      <Route path="/*" element={<PageNotFound to={"home"} handleClick={navigateClick} />} />
     </Routes>
   );
 };

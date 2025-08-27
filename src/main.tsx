@@ -7,10 +7,30 @@ import "./stylesheets/index.css";
 import ScrollToTop from "@utils/router/ScrollToTop.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter future={{ v7_startTransition: true }}>
+  <BrowserRouter>
     <ScrollToTop />
+    {/* <UserState> */}
+    {/* <AuthState>
+        <LogState>
+          <GameState>
+            <TaskBoardState>
+              <AppState>
+                <StoreState>
+                  <CalendarState>
+                    <MediaState>
+                      <AdminState> */}
     <App>
       <RoutesRouter />
     </App>
+    {/* </AdminState>
+                    </MediaState>
+                  </CalendarState>
+                </StoreState>
+              </AppState>
+            </TaskBoardState>
+          </GameState>
+        </LogState>
+      </AuthState> */}
+    {/* </UserState> */}
   </BrowserRouter>,
 );
